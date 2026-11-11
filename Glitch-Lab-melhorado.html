@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset=utf8><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Glitch Lab: descubra jogos independentes, explore novos universos e divulgue seu projeto para uma comunidade gamer.">
+<meta name="theme-color" content="#050708">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Glitch Lab">
+<meta property="og:title" content="Glitch Lab — Seu jogo. Seu momento. Nosso palco.">
+<meta property="og:description" content="Descubra jogos independentes e dê visibilidade à sua criação.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050708'/%3E%3Cpath d='M12 12h40v13H25v14h14v-8h13v21H12z' fill='%239dffbf'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Glitch Lab — Descubra e divulgue jogos independentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#06090a;--bg2:#0a1210;--card:rgba(255,255,255,.035);--line:rgba(57,255,136,.16);--g:#39ff88;--text:#eaf6ee;--mut:#9db3a6;--pink:#ff2d6f;--cyan:#19e3ff;--r:16px}
+*{box-sizing:border-box}
+html{background:var(--bg);color-scheme:dark;scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,p,blockquote,ul{margin:0}
+ul{padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--g);outline-offset:3px}
+[hidden]{display:none!important}
+.c{max-width:1160px;margin:0 auto;padding:0 24px}
+.sec{padding:clamp(64px,9vw,108px) 0}
+.alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pf{font-family:'Press Start 2P',monospace;font-size:10px;line-height:1.8;letter-spacing:.5px}
+.mut{color:var(--mut)}.g{color:var(--g)}
+.eyebrow{display:inline-block;font-family:'Press Start 2P',monospace;font-size:10px;line-height:1.8;color:var(--g);border:1px solid var(--line);background:rgba(57,255,136,.06);padding:8px 14px;border-radius:999px;margin-bottom:18px}
+.h2{font-size:clamp(28px,4.2vw,46px);line-height:1.12;letter-spacing:-.5px;max-width:760px}
+.lede{font-size:18px;color:var(--mut);max-width:640px;margin-top:16px}
+.head{margin-bottom:48px}.head.center{text-align:center}.head.center .h2,.head.center .lede{margin-left:auto;margin-right:auto}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.g4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--g);color:#04100a;border:0;border-radius:12px;padding:16px 26px;font:700 16px 'Space Grotesk',sans-serif;cursor:pointer;box-shadow:0 0 36px rgba(57,255,136,.35);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 48px rgba(57,255,136,.55)}
+.btn.out{background:transparent;color:var(--g);border:1px solid var(--g);box-shadow:none}
+.btn.sm{padding:10px 18px;font-size:14px}
+.fake{display:inline-block;border:1px dashed var(--pink);color:#ff8fb0;border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700}
+.note{font-size:13px;color:var(--mut)}
+
+/* aviso + menu */
+.bar{background:rgba(255,45,111,.1);border-bottom:1px solid rgba(255,45,111,.3);color:#ffb3c9;text-align:center;font-size:13px;padding:8px 16px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(6,9,10,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .c{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Press Start 2P',monospace;font-size:13px;color:var(--g);text-shadow:0 0 12px var(--g)}
+.logo i{width:20px;height:20px;background:var(--g);box-shadow:0 0 14px var(--g);clip-path:polygon(0 0,100% 0,100% 60%,60% 60%,60% 100%,0 100%)}
+.links{display:flex;align-items:center;gap:26px;font-size:14px;color:var(--mut)}
+.links a:hover{color:var(--text)}
+.mbtn{display:none;background:none;border:1px solid var(--line);color:var(--g);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background-image:linear-gradient(rgba(57,255,136,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(57,255,136,.06) 1px,transparent 1px);background-size:44px 44px;animation:gm 14s linear infinite}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 75% 30%,rgba(57,255,136,.14),transparent 70%),linear-gradient(transparent 60%,var(--bg));pointer-events:none}
+.fx{position:absolute;inset:0;pointer-events:none;z-index:1}
+.scan{position:absolute;left:0;right:0;top:-140px;height:140px;background:linear-gradient(transparent,rgba(57,255,136,.09),transparent);animation:sc 7s linear infinite}
+.px{position:absolute;top:-20px;opacity:0;animation:fl linear infinite}
+.hero .c{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-top:80px;padding-bottom:96px}
+.hero h1{font-size:clamp(40px,6.6vw,78px);line-height:1;letter-spacing:-1.5px;text-transform:uppercase;text-shadow:3px 0 var(--pink),-3px 0 var(--cyan);animation:up .8s ease .2s backwards,gl 4s infinite 1.2s}
+.hero .sub{font-size:20px;color:var(--text);margin:22px 0 10px;max-width:560px;font-weight:500}
+.hero .sub2{color:var(--mut);max-width:540px}
+.cta{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin:30px 0 28px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14px;color:var(--mut)}
+.trust span::before{content:"✓";color:var(--g);margin-right:8px;font-weight:700}
+.up{animation:up .8s ease backwards}
+.word{animation:wd .9s ease backwards}
+.cur{color:var(--g);margin-left:6px;animation:bl 1s steps(2,start) infinite}
+.mock{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 60px rgba(57,255,136,.12);animation:up 1s ease .6s backwards}
+.mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:13px;color:var(--mut)}
+.dots{display:flex;gap:6px}.dots i{width:9px;height:9px;border-radius:50%;background:#2a3a31}
+.mock-row{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.thumb{width:64px;height:84px;border-radius:10px;overflow:hidden;position:relative;border:1px solid var(--line);flex:none}
+.big{font-size:38px;font-weight:700;color:var(--g);text-shadow:0 0 18px rgba(57,255,136,.5);line-height:1.1}
+.chart{width:100%;height:auto;display:block}
+.badge{margin-top:14px;display:flex;gap:10px;align-items:center;background:rgba(57,255,136,.08);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13px}
+
+/* strip + steps */
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:34px 0}
+.si{display:flex;gap:14px;align-items:flex-start}
+.ic{flex:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:rgba(57,255,136,.07);display:flex;align-items:center;justify-content:center;color:var(--g);font-size:18px}
+.si strong{display:block;font-size:16px}.si span{font-size:14px;color:var(--mut)}
+.pain h3{font-size:22px;margin:10px 0 6px}
+.num{font-family:'Press Start 2P',monospace;font-size:11px;color:var(--pink)}
+.steps{counter-reset:s}
+.step{position:relative;padding-top:6px}
+.step .n{width:46px;height:46px;border-radius:50%;border:1px solid var(--g);color:var(--g);display:flex;align-items:center;justify-content:center;font-family:'Press Start 2P',monospace;font-size:12px;box-shadow:0 0 18px rgba(57,255,136,.3);margin-bottom:16px;background:var(--bg)}
+.step h3{font-size:20px;margin-bottom:6px}
+
+/* vitrine */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.chip{background:transparent;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:9px 18px;font:500 14px 'Space Grotesk',sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--g);color:#04100a;border-color:var(--g);font-weight:700}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+.game{aspect-ratio:3/4;position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#07120c;transition:transform .25s,box-shadow .25s}
+.game:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 30px rgba(57,255,136,.18)}
+.art{position:absolute;inset:0;width:100%;height:100%}
+.gi{position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.9));display:flex;flex-direction:column;gap:2px}
+.gi b{font-size:17px}.gi span{font-size:13px;color:var(--g)}
+.game.cta-card{border:2px dashed var(--g);background:rgba(57,255,136,.04);display:flex;align-items:center;justify-content:center;text-align:center;padding:18px}
+
+
+/* acabamento visual da vitrine e das capas */
+.games{gap:22px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.game{border-color:rgba(180,255,210,.2);background:#07100d;box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.game::before{content:"INDIE PICK";position:absolute;z-index:2;left:13px;top:14px;padding:6px 9px;border:1px solid rgba(255,255,255,.28);border-radius:6px;background:rgba(4,10,9,.55);backdrop-filter:blur(8px);font:8px 'Press Start 2P',monospace;color:#eaffef;letter-spacing:.4px;pointer-events:none}
+.game .art{filter:saturate(1.12) contrast(1.04)}
+.game:hover{border-color:var(--g);box-shadow:0 22px 48px rgba(0,0,0,.55),0 0 34px rgba(57,255,136,.2)}
+.gi{padding:22px 16px 17px;background:linear-gradient(transparent,rgba(0,0,0,.94) 35%)}
+.gi b{font-size:18px;letter-spacing:-.3px;text-shadow:0 2px 12px #000}
+.gi span{font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:#a8ffc8}
+.game-open{z-index:1}
+.favorite-btn{box-shadow:0 5px 18px rgba(0,0,0,.3)}
+.chip{transition:background .2s,color .2s,border-color .2s,transform .2s}
+.chip:hover{border-color:var(--g);color:var(--text);transform:translateY(-1px)}
+.fav-filter.active{background:rgba(57,255,136,.13);border-color:var(--g);color:var(--g)}
+.catalog-status{min-height:20px}
+.cover{box-shadow:0 18px 55px rgba(0,0,0,.45),0 0 35px rgba(57,255,136,.12)}
+@media(max-width:520px){.games{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.game{border-radius:13px}.gi{padding:18px 11px 12px}.gi b{font-size:14px}.gi span{font-size:10px}.game::before{font-size:7px;left:8px;top:9px}.favorite-btn{width:34px;height:34px;right:8px;top:8px}}
+
+/* insights */
+.dash{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:20px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.stat b{display:block;font-size:34px;color:var(--g);text-shadow:0 0 16px rgba(57,255,136,.45);line-height:1.15}
+.stat span{font-size:13px;color:var(--mut)}
+.bars li{margin-bottom:16px;font-size:14px}
+.bars .t{display:flex;justify-content:space-between;margin-bottom:6px}
+.bar-bg{height:8px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden}
+.bar-bg i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--g),var(--cyan))}
+
+/* caso */
+.case{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start}
+.cover{aspect-ratio:3/4;position:relative;border:1px solid var(--g);border-radius:var(--r);overflow:hidden;box-shadow:0 0 50px rgba(57,255,136,.2)}
+.tl{border-left:3px solid var(--c);padding:2px 0 2px 16px;margin-top:18px}
+.tl .pf{color:var(--c);font-size:9px}.tl strong{display:block}.tl span{color:var(--mut);font-size:15px}
+.quote{margin-top:26px;border-left:3px solid var(--g);background:var(--card);border-radius:0 var(--r) var(--r) 0;padding:22px 24px}
+
+/* comparacao + planos */
+.tbl{width:100%;border-collapse:collapse;min-width:560px}
+.tbl th,.tbl td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--line);font-size:15px}
+.tbl th{font-size:13px;color:var(--mut);font-weight:500}
+.tbl th.hl,.tbl td.hl{background:rgba(57,255,136,.07);color:var(--text)}
+.tbl th.hl{color:var(--g);font-weight:700}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r)}
+.plan{display:flex;flex-direction:column;gap:14px}
+.plan.hot{border-color:var(--g);box-shadow:0 0 50px rgba(57,255,136,.18);position:relative}
+.tag{position:absolute;top:-13px;left:24px;background:var(--g);color:#04100a;font-size:12px;font-weight:700;border-radius:99px;padding:4px 14px}
+.price{font-size:38px;font-weight:700}.price small{font-size:14px;color:var(--mut);font-weight:400}
+.plan li{font-size:15px;color:var(--mut);padding-left:24px;position:relative;margin-bottom:8px}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--g);font-weight:700}
+
+/* compromissos + equipe */
+.yes li,.no li{padding-left:28px;position:relative;margin-bottom:12px;font-size:15px}
+.yes li::before{content:"✓";position:absolute;left:0;color:var(--g);font-weight:700}
+.no li::before{content:"✕";position:absolute;left:0;color:var(--pink);font-weight:700}
+.team .av{width:72px;height:72px;border-radius:50%;border:1px solid var(--g);display:flex;align-items:center;justify-content:center;font-family:'Press Start 2P',monospace;color:var(--g);margin-bottom:14px;background:rgba(57,255,136,.08)}
+
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+details p{margin-top:12px;color:var(--mut)}
+summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--g);font-size:24px;line-height:1}
+details[open] summary::after{content:"−"}
+summary::-webkit-details-marker{display:none}
+
+/* form */
+.formwrap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+.formbox{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:20px;padding:32px}
+label{display:flex;flex-direction:column;gap:8px;font-weight:500;font-size:15px;margin-bottom:16px}
+input,select{width:100%;background:rgba(0,0,0,.35);border:1px solid #2a4a38;border-radius:10px;color:var(--text);padding:14px;font:16px 'Space Grotesk',sans-serif}
+label.ck{flex-direction:row;gap:10px;align-items:flex-start;font-weight:400;color:var(--mut);font-size:14px}
+label.ck input{width:20px;height:20px;margin-top:2px;accent-color:#39ff88;flex:none}
+.err{border:1px solid var(--pink);color:#ff9db9;border-radius:10px;padding:12px 16px;font-size:15px;margin-bottom:16px}
+.okc{width:72px;height:72px;border-radius:50%;border:2px solid var(--g);display:flex;align-items:center;justify-content:center;font-size:36px;color:var(--g);box-shadow:0 0 32px rgba(57,255,136,.45);animation:pop .5s cubic-bezier(.2,1.6,.4,1) both;margin-bottom:20px}
+.contact li{margin-bottom:14px;font-size:15px}.contact b{display:block;color:var(--g);font-size:13px;font-weight:500}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:#040607;padding:56px 0 40px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
+.fg h4{font-size:13px;color:var(--g);margin-bottom:14px;font-weight:500}
+.fg li{margin-bottom:10px;font-size:14px;color:var(--mut)}.fg a:hover{color:var(--text)}
+
+/* animacao */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@keyframes gm{to{background-position:0 44px,0 0}}
+@keyframes sc{to{top:100%}}
+@keyframes fl{0%{transform:translateY(0);opacity:0}10%{opacity:.85}90%{opacity:.6}100%{transform:translateY(780px);opacity:0}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes gl{0%,92%,100%{text-shadow:3px 0 #ff2d6f,-3px 0 #19e3ff}94%{text-shadow:-6px 0 #ff2d6f,6px 0 #19e3ff}96%{text-shadow:5px 2px #ff2d6f,-5px -2px #19e3ff}}
+@keyframes wd{0%{opacity:0;color:#39ff88;text-shadow:0 0 14px #39ff88}60%{opacity:1;color:#39ff88;text-shadow:0 0 14px #39ff88}100%{opacity:1;color:#9db3a6;text-shadow:none}}
+@keyframes bl{50%{opacity:0}}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+
+
+/* melhorias da vitrine e modal de detalhes */
+.catalog-tools{display:grid;grid-template-columns:minmax(220px,1fr) auto auto;gap:12px;align-items:end;margin:0 0 18px}
+.searchbox{display:flex;align-items:center;gap:10px;margin:0;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:rgba(0,0,0,.28);color:var(--g)}
+.searchbox span{font-size:25px;line-height:1}.searchbox input{border:0;background:transparent;padding:13px 0;outline:0;box-shadow:none}
+.sortbox{margin:0;min-width:170px;font-size:12px;color:var(--mut);gap:5px}.sortbox select{padding:10px 12px;font-size:14px}
+.fav-filter{white-space:nowrap}.fav-filter span{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-left:4px;border-radius:99px;background:rgba(255,255,255,.12)}
+.catalog-status{font-size:13px;color:var(--mut);margin:0 0 14px}
+.game{isolation:isolate}.game::after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.72));z-index:0;pointer-events:none}
+.game .art{transition:transform .6s cubic-bezier(.2,.7,.2,1)}.game:hover .art{transform:scale(1.055)}
+.game-open{position:absolute;inset:0;z-index:1;border:0;background:transparent;cursor:pointer;color:white}
+.open-label{position:absolute;left:16px;top:16px;padding:8px 12px;border-radius:99px;background:rgba(4,12,8,.78);border:1px solid var(--g);color:var(--g);font-size:11px;font-weight:700;opacity:0;transform:translateY(5px);transition:.2s}
+.game:hover .open-label,.game:focus-within .open-label{opacity:1;transform:none}
+.favorite-btn{position:absolute;right:12px;top:12px;z-index:3;width:40px;height:40px;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(4,8,6,.75);color:white;font-size:23px;line-height:1;cursor:pointer;backdrop-filter:blur(8px);transition:.2s}
+.favorite-btn[aria-pressed="true"]{color:var(--g);border-color:var(--g);background:rgba(57,255,136,.16);text-shadow:0 0 12px var(--g)}
+.gi{z-index:2;pointer-events:none}.game[hidden]{display:none!important}
+@media(max-width:700px){.catalog-tools{grid-template-columns:1fr 1fr}.searchbox{grid-column:1/-1}.sortbox{min-width:0}.fav-filter{font-size:12px;padding:10px}}
+@media(hover:none){.open-label{opacity:1;transform:none}}
+
+@media (max-width:900px){
+  .hero .c,.dash,.case,.formwrap{grid-template-columns:1fr}
+  .case{gap:28px}.cover{max-width:280px}
+  .fg{grid-template-columns:1fr 1fr}
+  .mbtn{display:block}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:16px;padding:20px 24px 24px;background:rgba(6,9,10,.97);border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero,.scan,.hero h1,.up,.word,.cur,.mock,.okc{animation:none}.px{display:none}
+  .js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}
+}
+
+/* GLITCH LAB — ART DIRECTION / PREMIUM PASS */
+:root{--bg:#050708;--bg2:#080e0d;--card:rgba(13,23,19,.72);--line:rgba(139,255,190,.17);--g:#9dffbf;--text:#f2fff7;--mut:#b6c7be;--pink:#ff4e91;--cyan:#5beaff;--r:20px}
+body{background:radial-gradient(ellipse at 50% -15%,rgba(38,112,75,.22),transparent 44%),#050708;letter-spacing:-.12px}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E")}
+.c{max-width:1280px;padding-left:clamp(20px,4vw,54px);padding-right:clamp(20px,4vw,54px)}
+.sec{padding:clamp(78px,10vw,132px) 0}.alt{background:linear-gradient(180deg,rgba(11,20,16,.92),rgba(5,9,8,.96));border-color:rgba(157,255,191,.1)}
+.bar{background:#0b1711;border-bottom:1px solid rgba(157,255,191,.18);color:#b9e8c9;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;padding:10px 14px}
+.nav{background:rgba(4,8,7,.76);border-bottom:1px solid rgba(157,255,191,.12);backdrop-filter:blur(22px)}.nav .c{height:78px}
+.logo{font-size:14px;letter-spacing:1px;color:#d9ffe6;text-shadow:0 0 22px rgba(157,255,191,.3)}.logo i{width:24px;height:24px;background:linear-gradient(135deg,#c5ffda,#42e98a);box-shadow:0 0 25px rgba(89,255,155,.5)}
+.links{gap:clamp(14px,2vw,28px);font-size:13px;letter-spacing:.15px}.links a:not(.btn){transition:color .2s}.links a:not(.btn):hover{color:var(--g)}
+.btn{background:linear-gradient(115deg,#caffdc,#70f5a6 55%,#42d987);color:#06150c;border-radius:999px;padding:15px 25px;box-shadow:0 8px 30px rgba(74,239,143,.2),inset 0 1px rgba(255,255,255,.7);font-size:14px;letter-spacing:.1px}.btn:hover{box-shadow:0 12px 42px rgba(74,239,143,.34),inset 0 1px rgba(255,255,255,.8);transform:translateY(-3px)}.btn.out{border:1px solid rgba(157,255,191,.45);color:#d9ffe6;background:rgba(9,20,14,.5);box-shadow:inset 0 0 20px rgba(157,255,191,.04)}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:2.4px;font-weight:700;color:#baffd0;border:1px solid rgba(157,255,191,.24);background:rgba(85,255,151,.055);border-radius:999px;padding:9px 15px;box-shadow:0 0 28px rgba(66,255,145,.06)}
+.hero{min-height:680px;background-image:linear-gradient(rgba(157,255,191,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(157,255,191,.035) 1px,transparent 1px);background-size:54px 54px;isolation:isolate}
+.hero::before{content:"";position:absolute;width:760px;height:760px;right:-220px;top:-250px;border:1px solid rgba(157,255,191,.11);border-radius:50%;box-shadow:0 0 0 60px rgba(157,255,191,.018),0 0 0 120px rgba(157,255,191,.014),0 0 130px rgba(65,255,145,.08);pointer-events:none}
+.hero::after{background:radial-gradient(50% 55% at 77% 38%,rgba(66,255,145,.18),transparent 72%),linear-gradient(transparent 50%,#050708 100%)}
+.hero .c{grid-template-columns:1.08fr .92fr;gap:clamp(32px,5vw,76px);padding-top:clamp(80px,10vw,132px);padding-bottom:clamp(80px,10vw,130px)}
+.hero h1{font-size:clamp(42px,6.2vw,82px);line-height:.98;letter-spacing:-4px;text-shadow:none;animation:up .8s ease .2s backwards;max-width:760px}.hero h1::first-line{color:#f1fff6}
+.hero .sub{font-size:clamp(19px,2vw,24px);line-height:1.35;letter-spacing:-.6px;max-width:590px;margin:26px 0 12px}.hero .sub2{font-size:15px;line-height:1.8;max-width:520px}.cta{gap:12px;margin:32px 0}.trust{font-size:12px;gap:10px 18px}.trust span::before{color:var(--g)}
+.mock{position:relative;border:1px solid rgba(174,255,202,.23);border-radius:26px;padding:24px;background:linear-gradient(145deg,rgba(22,39,29,.92),rgba(6,13,10,.92));box-shadow:0 45px 120px rgba(0,0,0,.65),0 0 90px rgba(57,255,136,.13),inset 0 1px rgba(255,255,255,.1);transform:perspective(1100px) rotateY(-5deg) rotateX(2deg)}.mock::before{content:"GLITCH LAB / LIVE INSIGHTS";position:absolute;top:-13px;right:22px;padding:7px 12px;border:1px solid rgba(157,255,191,.3);border-radius:99px;background:#09140e;color:#baffd0;font:700 9px 'Space Grotesk';letter-spacing:1.5px}.mock-top{letter-spacing:1px;text-transform:uppercase;font-size:10px}.thumb{width:72px;height:94px;border-radius:12px;border-color:rgba(157,255,191,.25)}.big{font-size:42px}.badge{border-radius:999px;background:rgba(97,255,160,.08);border-color:rgba(157,255,191,.17)}
+.h2{font-size:clamp(30px,4.5vw,54px);line-height:1.04;letter-spacing:-2px;max-width:850px}.lede{font-size:16px;line-height:1.8;max-width:680px}.head{margin-bottom:54px}.head.center .h2{max-width:850px}
+.card{background:linear-gradient(145deg,rgba(17,30,23,.86),rgba(8,14,11,.82));border:1px solid rgba(157,255,191,.13);border-radius:22px;padding:30px;box-shadow:0 18px 55px rgba(0,0,0,.16);transition:transform .25s,border-color .25s,box-shadow .25s}.card:hover{transform:translateY(-5px);border-color:rgba(157,255,191,.3);box-shadow:0 24px 60px rgba(0,0,0,.3),0 0 34px rgba(57,255,136,.055)}
+.ic{border-radius:14px;background:linear-gradient(145deg,rgba(157,255,191,.13),rgba(157,255,191,.025));border-color:rgba(157,255,191,.2);color:#baffd0}.step .n{border-color:rgba(157,255,191,.65);color:#c8ffda;background:#09140e;box-shadow:0 0 28px rgba(57,255,136,.13)}
+.games{grid-template-columns:repeat(auto-fill,minmax(218px,1fr));gap:24px}.game{border-radius:18px;border-color:rgba(215,255,229,.18);box-shadow:0 22px 50px rgba(0,0,0,.34);transform:translateZ(0)}.game::before{font:700 8px 'Space Grotesk';letter-spacing:1.8px;border-radius:99px;border-color:rgba(255,255,255,.3);padding:7px 11px}.game:hover{transform:translateY(-9px) scale(1.012);box-shadow:0 32px 65px rgba(0,0,0,.58),0 0 45px rgba(90,255,158,.14)}.game .art{filter:saturate(1.14) contrast(1.06)}.game::after{inset:45% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.86))}.gi{padding:25px 18px 20px}.gi b{font-size:20px;letter-spacing:-.7px}.gi span{font-size:10px;letter-spacing:1.4px;color:#baffd0}.favorite-btn{width:42px;height:42px;border-radius:50%;border-color:rgba(255,255,255,.35);font-size:21px}.game-open{cursor:pointer}
+.chip{border-color:rgba(157,255,191,.17);background:rgba(255,255,255,.018);padding:10px 18px;border-radius:999px}.chip[aria-pressed="true"]{background:linear-gradient(110deg,#baffd0,#55e994);color:#06150c}.catalog-tools .searchbox,.catalog-tools select{border-color:rgba(157,255,191,.2);background:rgba(4,10,7,.7);border-radius:13px}.catalog-tools input:focus,.catalog-tools select:focus{border-color:var(--g)}
+.cover{border-radius:20px;border-color:rgba(157,255,191,.35);box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 55px rgba(57,255,136,.12)}.quote{background:linear-gradient(120deg,rgba(157,255,191,.08),rgba(255,255,255,.02));border-left-color:#aaffc8;border-radius:0 18px 18px 0}
+.plan.hot{background:linear-gradient(145deg,rgba(28,57,39,.92),rgba(8,15,11,.94));border-color:rgba(157,255,191,.55);box-shadow:0 0 70px rgba(57,255,136,.11)}.tag{background:#baffd0;color:#06150c;letter-spacing:.3px}.price{letter-spacing:-2px}
+.formbox{border:1px solid rgba(157,255,191,.2);border-radius:24px;background:linear-gradient(145deg,rgba(17,31,23,.94),rgba(6,12,9,.94));box-shadow:0 30px 90px rgba(0,0,0,.34)}input,select{border-color:rgba(157,255,191,.2);background:rgba(0,0,0,.3);border-radius:12px}input:focus,select:focus{outline:0;border-color:#aaffc8;box-shadow:0 0 0 3px rgba(157,255,191,.09)}
+details{background:rgba(14,24,18,.72);border-color:rgba(157,255,191,.13);border-radius:16px;padding:21px 24px}details[open]{border-color:rgba(157,255,191,.28);background:rgba(18,34,24,.82)}summary{font-size:16px}
+footer{background:#030605;border-top-color:rgba(157,255,191,.15)}.fg h4{letter-spacing:1.4px;text-transform:uppercase;font-size:10px}.note{line-height:1.7}
+@media(max-width:900px){.hero .c{grid-template-columns:1fr}.mock{transform:none;max-width:650px}.hero h1{letter-spacing:-2.5px}.nav .c{height:68px}}
+@media(max-width:600px){.hero{min-height:0}.hero .c{padding-top:70px;padding-bottom:76px}.hero h1{font-size:clamp(40px,12vw,62px);letter-spacing:-2px}.hero .sub{font-size:19px}.mock{padding:18px;border-radius:20px}.sec{padding:76px 0}.games{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.game{border-radius:14px}.gi{padding:18px 12px 14px}.gi b{font-size:15px}.gi span{font-size:9px}.game::before{left:8px;top:8px;font-size:7px;padding:5px 7px}.favorite-btn{right:8px;top:8px;width:34px;height:34px}.card{padding:23px}.h2{letter-spacing:-1.3px}}
+@media(prefers-reduced-motion:reduce){.card,.game,.btn{transition:none}.mock{transform:none}}
+
+
+/* Páginas individuais dos jogos — experiência editorial/cinematográfica */
+.game-page .sec:not(#gameDetail),.game-page footer{display:none!important}
+#gameDetail{padding:30px 0 100px;min-height:90vh;background:radial-gradient(ellipse at 75% 8%,rgba(57,255,136,.10),transparent 34%),linear-gradient(180deg,#080e0b,#050807 70%)}
+.detail-wrap{max-width:1200px;margin:auto;padding:0 24px}
+.detail-back{display:inline-flex;gap:10px;align-items:center;color:#b9d1c1;font-size:14px;margin:12px 0 28px;transition:.2s}.detail-back:hover{color:var(--g);transform:translateX(-4px)}
+.detail-hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center;min-height:480px;padding:36px;border:1px solid rgba(139,255,180,.18);border-radius:28px;overflow:hidden;background:linear-gradient(120deg,rgba(12,27,18,.96),rgba(5,10,8,.9));box-shadow:0 35px 100px rgba(0,0,0,.45)}
+.detail-hero:before{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(57,255,136,.07),transparent 70%);transform:translateX(-100%);animation:detailSweep 8s ease-in-out infinite;pointer-events:none}
+.detail-copy{position:relative;z-index:2}.detail-kicker{color:var(--g);font:10px 'Press Start 2P';letter-spacing:1px;line-height:2}.detail-title{font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-3px;margin:20px 0}.detail-lead{font-size:clamp(17px,2vw,21px);color:#b6c9bd;max-width:570px}.detail-tags{display:flex;gap:9px;flex-wrap:wrap;margin:25px 0}.detail-tags span{border:1px solid rgba(57,255,136,.25);background:rgba(57,255,136,.06);padding:7px 11px;border-radius:99px;color:#c9f5d7;font-size:12px}
+.detail-artbox{position:relative;min-height:350px;display:grid;place-items:center;isolation:isolate}.detail-artbox:before,.detail-artbox:after{content:'';position:absolute;width:78%;aspect-ratio:1;border:1px solid rgba(57,255,136,.16);border-radius:50%;animation:orbit 22s linear infinite;z-index:-1}.detail-artbox:after{width:95%;border-style:dashed;animation-direction:reverse;animation-duration:36s}.detail-art{width:min(100%,480px);height:390px;filter:drop-shadow(0 30px 45px rgba(0,0,0,.65));animation:artFloat 6s ease-in-out infinite}.detail-art svg{width:100%;height:100%;overflow:visible}.detail-art svg .art{width:100%;height:100%}
+.detail-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px}.buy-btn{font-size:17px;padding:18px 30px;letter-spacing:.5px;text-transform:uppercase}.buy-note{font-size:12px;color:#82988a;max-width:210px}.detail-section{padding:82px 0 0}.detail-section h2{font-size:clamp(28px,4vw,44px);letter-spacing:-1.5px;margin-bottom:18px}.detail-body{display:grid;grid-template-columns:1.2fr .8fr;gap:48px}.detail-body p{color:#a9bdb0;font-size:17px;line-height:1.85}.detail-facts{display:grid;gap:12px}.fact{padding:18px 20px;border:1px solid rgba(57,255,136,.14);border-radius:15px;background:rgba(255,255,255,.025)}.fact small{display:block;color:var(--g);font:9px 'Press Start 2P';margin-bottom:9px}.fact strong{font-size:16px}
+.trailer-frame{position:relative;overflow:hidden;min-height:300px;border:1px solid rgba(57,255,136,.25);border-radius:24px;background:#07100b;box-shadow:0 25px 70px rgba(0,0,0,.4)}.trailer-stage{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 60%,rgba(57,255,136,.16),transparent 55%),linear-gradient(135deg,#0d1d13,#050807)}.trailer-stage:before{content:'';position:absolute;inset:-30%;background:repeating-linear-gradient(115deg,transparent 0 45px,rgba(57,255,136,.06) 46px 47px);animation:trailerPan 16s linear infinite}.trailer-stage:after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.35)),repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.025) 4px);pointer-events:none}.trailer-art{position:relative;width:min(62%,440px);height:280px;z-index:1;animation:trailerFloat 5s ease-in-out infinite;filter:drop-shadow(0 20px 35px rgba(0,0,0,.65))}.trailer-art svg{width:100%;height:100%}.trailer-caption{position:absolute;z-index:3;left:22px;bottom:20px;font:9px 'Press Start 2P';color:#d8ffe5;letter-spacing:1px}.trailer-live{position:absolute;z-index:3;right:20px;top:20px;border:1px solid rgba(57,255,136,.4);background:rgba(0,0,0,.45);border-radius:99px;padding:7px 10px;color:var(--g);font-size:10px;letter-spacing:1px}
+.trailer-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:15px}.shot{height:110px;border:1px solid rgba(57,255,136,.14);border-radius:14px;overflow:hidden;position:relative;background:radial-gradient(circle at 50% 50%,rgba(57,255,136,.18),transparent 60%),#0a130e}.shot:before{content:'';position:absolute;inset:-40%;background:repeating-linear-gradient(130deg,transparent 0 30px,rgba(57,255,136,.09) 31px 32px);animation:trailerPan 12s linear infinite}.shot:nth-child(2){filter:hue-rotate(45deg)}.shot:nth-child(3){filter:hue-rotate(110deg)}.shot span{position:absolute;bottom:10px;left:12px;font-size:10px;color:#d8ffe5;letter-spacing:1px}
+.detail-buy-status{display:none;margin-top:14px;color:#ffe2a8;font-size:13px}.detail-buy-status.show{display:block}
+@keyframes detailSweep{0%,65%{transform:translateX(-100%)}90%,100%{transform:translateX(100%)}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes artFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-13px) rotate(1deg)}}@keyframes trailerFloat{0%,100%{transform:translateY(5px) scale(1)}50%{transform:translateY(-12px) scale(1.035)}}@keyframes trailerPan{to{transform:translate3d(8%,8%,0)}}
+@media(max-width:760px){#gameDetail{padding-top:15px}.detail-hero{grid-template-columns:1fr;gap:8px;padding:25px 20px;min-height:0}.detail-copy{order:1}.detail-artbox{order:0;min-height:250px}.detail-art{height:250px}.detail-title{font-size:clamp(40px,12vw,60px);letter-spacing:-2px}.detail-body{grid-template-columns:1fr;gap:25px}.detail-section{padding-top:55px}.trailer-frame{min-height:240px}.trailer-art{height:220px}.trailer-strip{gap:8px}.shot{height:82px}.detail-cta{align-items:stretch;flex-direction:column}.buy-btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.detail-hero:before,.detail-artbox:before,.detail-artbox:after,.detail-art,.trailer-stage:before,.trailer-art,.shot:before{animation:none!important}}
+
+.totop{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:48px;height:48px;border-radius:50%;border:1px solid var(--g);background:rgba(6,9,10,.85);color:var(--g);font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s}.totop.show{opacity:1;pointer-events:auto}
+.av svg{width:44px;height:44px;display:block}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--g);color:#04100a;padding:10px 16px;border-radius:10px;font-weight:700;transition:top .2s}.skip:focus{top:12px}
+.detail-title:focus{outline:none}
+.game-page .home-only{display:none!important}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);z-index:70;background:#0b1711;border:1px solid var(--g);color:var(--text);padding:12px 20px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<noscript><div style="padding:14px;background:#0b1711;color:#d9ffe6;text-align:center">Ative o JavaScript para usar a busca, os filtros e os detalhes interativos do Glitch Lab.</div></noscript>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<radialGradient id="glow" cx="50%" cy="45%" r="50%"><stop offset="0" stop-color="#39ff88" stop-opacity=".5"/><stop offset="1" stop-color="#39ff88" stop-opacity="0"/></radialGradient>
+<linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39ff88" stop-opacity=".35"/><stop offset="1" stop-color="#39ff88" stop-opacity="0"/></linearGradient>
+<g id="stars" fill="#eaf6ee"><circle cx="48" cy="52" r="2"/><circle cx="240" cy="40" r="2"/><circle cx="262" cy="110" r="1.5"/><circle cx="30" cy="140" r="1.5"/><circle cx="205" cy="82" r="1.5"/></g>
+<symbol id="a1" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="v1" x2="0" y2="1"><stop stop-color="#07131d"/><stop offset=".48" stop-color="#123a3a"/><stop offset="1" stop-color="#020607"/></linearGradient><radialGradient id="moon1"><stop stop-color="#d9ffe8"/><stop offset=".25" stop-color="#72ffc1" stop-opacity=".65"/><stop offset="1" stop-color="#39ff88" stop-opacity="0"/></radialGradient><linearGradient id="ray1" x2="1" y2="1"><stop stop-color="#e5ffb2" stop-opacity=".75"/><stop offset="1" stop-color="#39ff88" stop-opacity="0"/></linearGradient><filter id="blur1"><feGaussianBlur stdDeviation="12"/></filter></defs>
+<rect width="300" height="400" fill="url(#v1)"/><circle cx="160" cy="142" r="120" fill="url(#moon1)"/><circle cx="160" cy="142" r="42" fill="#c8ffe1" opacity=".16" filter="url(#blur1)"/><path d="M0 238L36 196 66 219 116 145 151 204 199 126 236 202 270 165 300 204V400H0Z" fill="#0a1c22"/><path d="M0 270L52 222 88 253 137 188 178 244 229 190 300 252V400H0Z" fill="#102e2a"/><path d="M0 323Q55 286 114 319T230 307T300 310V400H0Z" fill="#061210"/><path d="M145 115L145 177" stroke="#dfffc1" stroke-width="5"/><path d="M145 171L28 337 270 337Z" fill="url(#ray1)" opacity=".58"/><path d="M136 170Q145 158 154 170L160 219Q145 231 130 219Z" fill="#08120e" stroke="#dfffc1" stroke-width="3"/><rect x="140" y="181" width="10" height="27" rx="4" fill="#eaffaa"/><path d="M0 360L54 343 90 354 130 337 168 354 220 337 300 356V400H0Z" fill="#020706"/><g fill="#baffd1" opacity=".8"><circle cx="38" cy="88" r="1.5"/><circle cx="244" cy="63" r="2"/><circle cx="272" cy="118" r="1"/><circle cx="82" cy="45" r="1"/><circle cx="210" cy="94" r="1"/></g><path d="M18 26H62M18 26V70M282 26H238M282 26V70" stroke="#b9ffce" opacity=".6"/><text x="18" y="351" fill="#b8ffd0" font-size="8" letter-spacing="3.5">A JOURNEY INTO THE UNKNOWN</text><text x="15" y="378" fill="#f2fff7" font-size="24" font-weight="900" letter-spacing="-1.5">LANTERNA</text><text x="16" y="398" fill="#5dffa5" font-size="19" font-weight="900" letter-spacing="2.5">DO VAZIO</text>
+</symbol>
+<symbol id="a2" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="v2" x2="0" y2="1"><stop stop-color="#031d32"/><stop offset=".55" stop-color="#07536a"/><stop offset="1" stop-color="#020c17"/></linearGradient><radialGradient id="orb2"><stop stop-color="#e4ffff"/><stop offset=".2" stop-color="#55efff"/><stop offset="1" stop-color="#0bc9ee" stop-opacity="0"/></radialGradient><linearGradient id="metal2" x2="1" y2="1"><stop stop-color="#e2ffff"/><stop offset=".5" stop-color="#28c8dd"/><stop offset="1" stop-color="#12415b"/></linearGradient></defs>
+<rect width="300" height="400" fill="url(#v2)"/><circle cx="153" cy="166" r="132" fill="url(#orb2)"/><path d="M0 221L40 196 70 216 112 166 143 211 184 154 220 204 260 164 300 198V400H0Z" fill="#082a3b"/><path d="M0 282L55 240 92 267 140 216 185 262 235 215 300 257V400H0Z" fill="#041b2a"/><g opacity=".55" stroke="#66efff" fill="none"><path d="M0 248H300M0 276H300M0 304H300" stroke-width="1"/><path d="M38 0V310M78 0V310M222 0V310M262 0V310" stroke-width=".7"/></g><g transform="translate(151 180)"><circle r="89" fill="#051b2a" stroke="#8af7ff" stroke-width="3"/><circle r="74" fill="none" stroke="#2ad9ed" stroke-width="11" stroke-dasharray="26 12"/><circle r="53" fill="#07334a" stroke="url(#metal2)" stroke-width="7"/><circle r="28" fill="#061d31" stroke="#c8ffff" stroke-width="4"/><path d="M0 -110V-82M0 82V110M-110 0H-82M82 0H110" stroke="#d7ffff" stroke-width="5"/><path d="M-14 -48L0 -76 14 -48 0 48Z" fill="#a9ffff" opacity=".8"/><circle r="9" fill="#fff"/></g><path d="M18 26H282" stroke="#9afaff" opacity=".5"/><text x="18" y="333" fill="#9cf8ff" font-size="8" letter-spacing="3.4">THE CITY BENEATH</text><text x="15" y="365" fill="#efffff" font-size="24" font-weight="900">MAR DE</text><text x="15" y="393" fill="#53eaff" font-size="22" font-weight="900" letter-spacing=".4">ENGRENAGENS</text>
+</symbol>
+<symbol id="a3" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="v3" x2="0" y2="1"><stop stop-color="#28152b"/><stop offset=".42" stop-color="#a94d38"/><stop offset="1" stop-color="#140d1c"/></linearGradient><linearGradient id="sun3" x2="0" y2="1"><stop stop-color="#fff0b5"/><stop offset="1" stop-color="#ff8a45"/></linearGradient><linearGradient id="fur3" x2="0" y2="1"><stop stop-color="#ffcf7c"/><stop offset="1" stop-color="#b34b2f"/></linearGradient></defs>
+<rect width="300" height="400" fill="url(#v3)"/><circle cx="224" cy="112" r="70" fill="url(#sun3)"/><circle cx="224" cy="112" r="89" fill="none" stroke="#ffd9a1" opacity=".24"/><path d="M0 220L48 168 88 221 135 148 183 222 236 163 300 225V400H0Z" fill="#512536"/><path d="M0 274L62 220 110 260 167 205 221 259 300 216V400H0Z" fill="#2d1b2a"/><path d="M0 333Q70 300 144 328T300 318V400H0Z" fill="#160f1b"/><g transform="translate(151 226)"><path d="M-60 -20L-48 -94 -12 -61 0 -106 14 -61 49 -94 60 -20 40 39 0 62 -40 39Z" fill="url(#fur3)" stroke="#351725" stroke-width="8"/><path d="M-42 -65L-30 -22 -9 -38 0 -68 10 -38 31 -22 43 -65 19 -48 0 -38 -20 -48Z" fill="#fff0cf"/><path d="M-31 -5L-12 5 0 -1 12 5 31 -5 20 25 0 39 -20 25Z" fill="#64283a"/><path d="M-24 -13L-11 -9M11 -9L24 -13" stroke="#25101b" stroke-width="6" stroke-linecap="round"/><path d="M-50 18L-76 47M50 18L76 47" stroke="#f8b36a" stroke-width="8" stroke-linecap="round"/><path d="M-24 51L-37 76M24 51L37 76" stroke="#f8b36a" stroke-width="9" stroke-linecap="round"/></g><g fill="#ffdda2" opacity=".6"><circle cx="35" cy="86" r="2"/><circle cx="68" cy="124" r="1.5"/><circle cx="272" cy="194" r="2"/><circle cx="43" cy="282" r="1"/></g><text x="18" y="28" fill="#ffe6bc" font-size="8" letter-spacing="3.5">A KINGDOM DIVIDED</text><text x="15" y="352" fill="#fff2d9" font-size="23" font-weight="900">REINO DAS</text><text x="15" y="383" fill="#ffb45d" font-size="27" font-weight="900" letter-spacing=".5">RAPOSAS</text>
+</symbol>
+<symbol id="a4" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="v4" x2="0" y2="1"><stop stop-color="#100a2b"/><stop offset=".52" stop-color="#3b145d"/><stop offset="1" stop-color="#070817"/></linearGradient><radialGradient id="pulse4"><stop stop-color="#fff"/><stop offset=".12" stop-color="#ff62b1"/><stop offset=".43" stop-color="#8b43ff" stop-opacity=".55"/><stop offset="1" stop-color="#7c31ff" stop-opacity="0"/></radialGradient><linearGradient id="beam4"><stop stop-color="#35f5ff"/><stop offset="1" stop-color="#ff48ad"/></linearGradient></defs>
+<rect width="300" height="400" fill="url(#v4)"/><circle cx="154" cy="172" r="150" fill="url(#pulse4)"/><path d="M0 280L45 245 80 272 122 225 160 267 208 220 250 262 300 232V400H0Z" fill="#100c28"/><g transform="translate(151 174)" fill="none" stroke-linecap="round"><circle r="105" stroke="#1beaff" stroke-width="2" opacity=".7"/><circle r="84" stroke="#ff4caa" stroke-width="7" stroke-dasharray="60 18 12 18"/><circle r="59" stroke="#c2a3ff" stroke-width="3" stroke-dasharray="3 8"/><circle r="36" stroke="#fff" stroke-width="2"/><path d="M0 -142V-92M0 92V142M-142 0H-92M92 0H142" stroke="url(#beam4)" stroke-width="4"/><path d="M-78 -78L-44 -44M78 78L44 44M78 -78L44 -44M-78 78L-44 44" stroke="#ff4caa" stroke-width="4"/><path d="M0 -54L15 0 0 54 -15 0Z" fill="#f7fbff" stroke="none"/><circle r="8" fill="#fff" stroke="none"/></g><g stroke="#45f2ff" opacity=".55"><path d="M20 90L80 150M220 200L280 260M36 280L92 226M210 90L265 35"/></g><g fill="#ff8ec8"><circle cx="48" cy="68" r="2"/><circle cx="260" cy="122" r="2"/><circle cx="60" cy="220" r="1.5"/></g><text x="18" y="28" fill="#b7f7ff" font-size="8" letter-spacing="3.5">FEEL THE FREQUENCY</text><text x="15" y="354" fill="#fff" font-size="31" font-weight="900" letter-spacing="1">PULSO</text><text x="15" y="388" fill="#ff4eaa" font-size="31" font-weight="900" letter-spacing="3">NEON</text>
+</symbol>
+<symbol id="a5" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="v5" x2="0" y2="1"><stop stop-color="#b8dba9"/><stop offset=".5" stop-color="#f0d9a0"/><stop offset="1" stop-color="#426a50"/></linearGradient><radialGradient id="sun5"><stop stop-color="#fff9d6"/><stop offset="1" stop-color="#fff0ad" stop-opacity="0"/></radialGradient></defs>
+<rect width="300" height="400" fill="url(#v5)"/><circle cx="232" cy="92" r="90" fill="url(#sun5)"/><circle cx="232" cy="92" r="40" fill="#fff1b4" opacity=".9"/><path d="M0 204Q76 156 151 203T300 185V400H0Z" fill="#8eaa69"/><path d="M0 256Q83 204 164 253T300 238V400H0Z" fill="#638b58"/><path d="M0 316Q90 276 170 313T300 300V400H0Z" fill="#315f43"/><g stroke="#28543a" stroke-width="8" fill="none" stroke-linecap="round"><path d="M148 326Q150 246 119 190M148 300Q178 236 215 216M145 279Q103 242 72 241M153 275Q166 215 163 174"/></g><g fill="#dff2b3"><ellipse cx="108" cy="190" rx="36" ry="14" transform="rotate(25 108 190)"/><ellipse cx="217" cy="214" rx="39" ry="15" transform="rotate(-25 217 214)"/><ellipse cx="74" cy="240" rx="31" ry="13" transform="rotate(18 74 240)"/><ellipse cx="164" cy="176" rx="31" ry="13" transform="rotate(-70 164 176)"/></g><g fill="#f3a5a0" stroke="#fff0d0" stroke-width="2"><circle cx="146" cy="278" r="15"/><circle cx="125" cy="300" r="12"/><circle cx="169" cy="300" r="13"/></g><g fill="#fff7d7" opacity=".8"><circle cx="35" cy="88" r="3"/><circle cx="270" cy="166" r="2"/><circle cx="62" cy="158" r="2"/></g><path d="M20 44H280" stroke="#fff9d9" stroke-width="2" opacity=".65"/><text x="20" y="32" fill="#244b36" font-size="8" letter-spacing="3.2">GROW AT YOUR OWN PACE</text><text x="15" y="352" fill="#fffbe1" font-size="24" font-weight="900">HORTA DA</text><text x="15" y="384" fill="#fff0b5" font-size="28" font-weight="900" letter-spacing=".5">VOVÓ</text>
+</symbol>
+<symbol id="a6" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="v6" x2="0" y2="1"><stop stop-color="#2a0f3d"/><stop offset=".55" stop-color="#ff5a3c"/><stop offset="1" stop-color="#1a0a1c"/></linearGradient></defs><rect width="300" height="400" fill="url(#v6)"/><circle cx="210" cy="150" r="58" fill="#ffd27a" opacity=".85"/><path d="M0 270h46v-40h34v28h40v-60h38v44h50v-30h42v58h50v130H0z" fill="#150817"/><path d="M0 330h70v-34h44v22h58v-48h50v40h78v220H0z" fill="#0c040e"/><g fill="#ffb347"><rect x="58" y="246" width="8" height="8"/><rect x="132" y="214" width="8" height="8"/><rect x="204" y="250" width="8" height="8"/></g><g transform="translate(90 210)"><rect y="12" width="26" height="24" rx="4" fill="#39ff88"/><rect x="4" width="18" height="14" rx="3" fill="#0a1c14" stroke="#39ff88" stroke-width="2"/><circle cx="13" cy="7" r="3" fill="#39ff88"/><path d="M4 36l-5 12M22 36l7 12" stroke="#39ff88" stroke-width="4" stroke-linecap="round"/></g><path d="M84 250l-16 6M86 238l-16-8M92 258l-10 12" stroke="#fff3b0" stroke-width="2.5" stroke-linecap="round"/></symbol>
+<symbol id="a7" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="v7" x2="0" y2="1"><stop stop-color="#0b0f1a"/><stop offset=".6" stop-color="#5a0f1f"/><stop offset="1" stop-color="#16060c"/></linearGradient><radialGradient id="m7"><stop stop-color="#ffd7d7"/><stop offset="1" stop-color="#ff2d6f" stop-opacity="0"/></radialGradient></defs><rect width="300" height="400" fill="url(#v7)"/><circle cx="90" cy="110" r="80" fill="url(#m7)"/><circle cx="90" cy="110" r="26" fill="#ffe3e3"/><path d="M229 115L20 60v110z" fill="#ff2d6f" opacity=".18"/><path d="M0 250Q40 238 80 250T160 250T240 250T300 246V400H0z" fill="#2a0713"/><path d="M218 120h22l8 130h-38z" fill="#0a0206"/><rect x="214" y="108" width="30" height="14" fill="#ff2d6f"/><path d="M0 290Q50 276 100 290T200 290T300 286V400H0z" fill="#16050b"/><path d="M60 290l22-20 8 20zM96 290h30l-4-12h-22z" fill="#05010a"/><path d="M0 335Q60 322 120 335T240 335T300 332V400H0z" fill="#0a0206"/></symbol>
+<symbol id="a8" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="v8" x2="0" y2="1"><stop stop-color="#1a2f6b"/><stop offset=".6" stop-color="#6fb3ff"/><stop offset="1" stop-color="#e9f6ff"/></linearGradient></defs><rect width="300" height="400" fill="url(#v8)"/><g fill="#fff" opacity=".7"><ellipse cx="60" cy="90" rx="40" ry="12"/><ellipse cx="240" cy="150" rx="46" ry="13"/><ellipse cx="90" cy="330" rx="52" ry="14"/></g><path d="M60 250h180l-30 50q-30 40-60 70q-30-30-60-70z" fill="#3b2a24"/><path d="M60 250q90-26 180 0z" fill="#4fbf6a"/><path d="M138 250l6-110h12l6 110z" fill="#ecd9b0"/><path d="M130 140h40l-20-28z" fill="#ff5a3c"/><g stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M150 150L90 120M150 150L210 180M150 150L120 210M150 150L180 90"/></g><circle cx="150" cy="150" r="6" fill="#39ff88"/><g fill="#ecd9b0"><rect x="78" y="226" width="16" height="26"/><rect x="206" y="226" width="16" height="26"/></g><path d="M74 226h24l-12-14zM202 226h24l-12-14z" fill="#ff5a3c"/></symbol>
+</defs>
+</svg>
+
+<a class="skip" href="#topo">Pular para o conteúdo</a>
+<div class="bar">Protótipo de demonstração: nomes, números, valores e depoimentos são fictícios.</div>
+
+<header class="nav">
+  <div class="c">
+    <a href="#topo" class="logo"><i></i>GLITCH LAB</a>
+    <button class="mbtn" id="mbtn" type="button" aria-label="Abrir menu" aria-controls="links" aria-expanded="false">☰</button>
+    <nav class="links" id="links" aria-label="Navegação principal">
+      <a href="#como">Como funciona</a><a href="#vitrine">Vitrine</a><a href="#resultados">Resultados</a><a href="#planos">Planos</a><a href="#sobre">Sobre</a><a href="#perguntas">Perguntas</a>
+      <a href="#participar" class="btn sm">Divulgue seu jogo</a>
+    </nav>
+  </div>
+</header>
+<span id="topo"></span>
+
+<section class="hero home-only">
+  <div class="fx" id="fx" aria-hidden="true"><div class="scan"></div></div>
+  <div class="c">
+    <div>
+      <span class="eyebrow up">INDIE GAMES DESERVE THE SPOTLIGHT</span>
+      <p class="pf" style="color:#aaffc8;letter-spacing:2.5px;margin:0 0 18px">INDEPENDENT GAMES. UNLIMITED WORLDS.</p><h1>SEU JOGO.<br>SEU MOMENTO.<br>NOSSO PALCO.</h1>
+      <p class="sub up" style="animation-delay:.5s">A gente transforma bons jogos independentes em descobertas impossíveis de ignorar.</p>
+      <p class="sub2 up" style="animation-delay:.8s">Estratégia, presença e comunidade para conectar sua criação com quem realmente quer jogar.</p>
+      <div class="cta up" style="animation-delay:1.1s">
+        <a href="#participar" class="btn">Divulgar meu jogo ↗</a>
+        <a href="#como" class="btn out">Ver como funciona</a>
+      </div>
+      <div class="trust up" style="animation-delay:1.3s"><span>Você mantém os direitos do jogo</span><span>Sem promessa de sucesso garantido</span><span>Relatórios claros</span></div>
+      <p class="pf mut" style="margin-top:28px"><span class="word" style="animation-delay:1.6s">Descubra.</span> <span class="word" style="animation-delay:2.2s">Divulgue.</span> <span class="word" style="animation-delay:2.8s">Conquiste seu espaço.</span><span class="cur" aria-hidden="true">▮</span></p>
+    </div>
+    <div>
+      <div class="mock" aria-label="Exemplo ilustrativo do painel Insights">
+        <div class="mock-top"><div class="dots"><i></i><i></i><i></i></div><span>Glitch Lab / Insights</span></div>
+        <div class="mock-row">
+          <div class="thumb"><svg class="art" aria-hidden="true"><use href="#a1"/></svg></div>
+          <div><div style="font-weight:700">Lanterna do Vazio</div><div class="note">Últimos 30 dias · simulado</div><div class="big" data-count="25000">25.000</div><div class="note">visualizações</div></div>
+        </div>
+        <svg class="chart" viewBox="0 0 320 120" role="img" aria-label="Gráfico ilustrativo de visualizações crescendo ao longo do mês"><path d="M0 95 L40 88 L80 70 L120 74 L160 50 L200 42 L240 30 L280 22 L320 12 V120 H0Z" fill="url(#area)"/><polyline points="0,95 40,88 80,70 120,74 160,50 200,42 240,30 280,22 320,12" fill="none" stroke="#39ff88" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        <div class="badge"><span class="g">★★★★★</span><span>“Lindo demais, jogo de um fôlego só.” · avaliação fictícia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="c home-only">
+  <div class="strip rv">
+    <div class="si"><div class="ic">◆</div><div><strong>Transparência</strong><span>Mostramos o que fazemos e o que não prometemos.</span></div></div>
+    <div class="si"><div class="ic">▲</div><div><strong>Seu jogo é seu</strong><span>Arte, música e código continuam com você.</span></div></div>
+    <div class="si"><div class="ic">●</div><div><strong>Dados claros</strong><span>Um painel simples com o que realmente aconteceu.</span></div></div>
+    <div class="si"><div class="ic">■</div><div><strong>Foco no indie</strong><span>Feita para quem faz jogos em equipes pequenas.</span></div></div>
+  </div>
+</div>
+
+<section class="sec alt" id="problema">
+  <div class="c">
+    <div class="head rv"><span class="eyebrow">O PROBLEMA</span><h2 class="h2">Criar um jogo é difícil. Fazer o mundo descobri-lo também.</h2><p class="lede">Você investiu noites, criatividade e muito café. Agora falta o jogo chegar a quem vai gostar dele.</p></div>
+    <div class="grid g2">
+      <div class="card pain rv"><div class="num">01</div><h3>Pouca visibilidade</h3><p class="mut">O jogo está pronto, mas quase ninguém sabe que ele existe.</p></div>
+      <div class="card pain rv"><div class="num">02</div><h3>Dificuldade para crescer</h3><p class="mut">Sem divulgação, achar jogadores novos vira um trabalho solitário e cansativo.</p></div>
+    </div>
+    <div class="card rv" style="margin-top:20px;border-color:var(--g);box-shadow:0 0 50px rgba(57,255,136,.14)"><h3 class="g" style="font-size:30px;margin-bottom:8px">É aí que entra a Glitch Lab.</h3><p>Uma vitrine feita para jogos independentes, onde jogadores curiosos encontram o que ninguém ainda contou para eles.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="como">
+  <div class="c">
+    <div class="head rv center"><span class="eyebrow">THE PLAYBOOK / 01</span><h2 class="h2">Do envio ao primeiro jogador, em quatro passos</h2><p class="lede">Um processo simples, sem burocracia e com tudo explicado desde o começo.</p></div>
+    <div class="grid g4">
+      <div class="step rv"><div class="n">1</div><h3>Você envia</h3><p class="mut">Capa, trailer, descrição e o link para jogar. Pode ser uma demo.</p></div>
+      <div class="step rv"><div class="n">2</div><h3>Montamos a página</h3><p class="mut">Criamos a página do seu jogo e a colocamos na vitrine.</p></div>
+      <div class="step rv"><div class="n">3</div><h3>Divulgamos</h3><p class="mut">Redes sociais, comunidades indie e criadores de conteúdo.</p></div>
+      <div class="step rv"><div class="n">4</div><h3>Você acompanha</h3><p class="mut">Visitas, cliques e avaliações em um painel fácil de entender.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="vitrine">
+  <div class="c">
+    <div class="head rv"><span class="eyebrow">THE INDIE SHOWCASE</span><h2 class="h2">NÃO É SOBRE SER GRANDE. É SOBRE SER INESQUECÍVEL.</h2><p class="lede">Uma curadoria de mundos, ideias e experiências independentes que merecem sair do radar e entrar na lista de desejos.</p></div>
+    <div class="catalog-tools">
+      <label class="searchbox" aria-label="Pesquisar jogos"><span aria-hidden="true">⌕</span><input id="gameSearch" type="search" placeholder="Buscar por nome ou gênero..." autocomplete="off"></label>
+      <label class="sortbox">Ordenar por
+        <select id="gameSort" aria-label="Ordenar jogos"><option value="featured">Destaques</option><option value="name">Nome (A–Z)</option><option value="genre">Gênero</option></select>
+      </label>
+      <button class="chip fav-filter" id="favoritesOnly" type="button" aria-pressed="false">♡ Meus favoritos <span id="favCount">0</span></button>
+    </div>
+    <div class="chips" role="group" aria-label="Filtrar por gênero">
+      <button class="chip" data-f="todos" aria-pressed="true">Todos</button><button class="chip" data-f="Aventura" aria-pressed="false">Aventura</button><button class="chip" data-f="Puzzle" aria-pressed="false">Puzzle</button><button class="chip" data-f="Estratégia" aria-pressed="false">Estratégia</button><button class="chip" data-f="Ação" aria-pressed="false">Ação</button><button class="chip" data-f="Simulação" aria-pressed="false">Simulação</button>
+    </div>
+    <p class="catalog-status" id="catalogStatus" aria-live="polite">8 jogos encontrados</p>
+    <div class="games" id="gamesGrid">
+      <article class="game" data-g="Aventura" data-name="Lanterna do Vazio" data-desc="Explore um vale esquecido, siga sinais de luz e descubra o que aconteceu com a última expedição." data-platform="PC · Demo"><svg class="art" role="img" aria-label="Arte conceitual de Lanterna do Vazio"><use href="#a1"/></svg><button class="game-open" type="button" aria-label="Ver detalhes de Lanterna do Vazio"><span class="open-label">VER JOGO ↗</span></button><button class="favorite-btn" type="button" aria-label="Adicionar Lanterna do Vazio aos favoritos" aria-pressed="false">♡</button><div class="gi"><b>Lanterna do Vazio</b><span>Aventura · Exploração</span></div></article>
+      <article class="game" data-g="Puzzle" data-name="Mar de Engrenagens" data-desc="Resolva enigmas mecânicos em ruínas submersas e reative uma cidade movida por máquinas antigas." data-platform="PC · Demo"><svg class="art" role="img" aria-label="Arte conceitual de Mar de Engrenagens"><use href="#a2"/></svg><button class="game-open" type="button" aria-label="Ver detalhes de Mar de Engrenagens"><span class="open-label">VER JOGO ↗</span></button><button class="favorite-btn" type="button" aria-label="Adicionar Mar de Engrenagens aos favoritos" aria-pressed="false">♡</button><div class="gi"><b>Mar de Engrenagens</b><span>Puzzle · Lógica</span></div></article>
+      <article class="game" data-g="Estratégia" data-name="Reino das Raposas" data-desc="Construa alianças, administre recursos e lidere clãs de raposas em um reino dividido." data-platform="PC · Em desenvolvimento"><svg class="art" role="img" aria-label="Arte conceitual de Reino das Raposas"><use href="#a3"/></svg><button class="game-open" type="button" aria-label="Ver detalhes de Reino das Raposas"><span class="open-label">VER JOGO ↗</span></button><button class="favorite-btn" type="button" aria-label="Adicionar Reino das Raposas aos favoritos" aria-pressed="false">♡</button><div class="gi"><b>Reino das Raposas</b><span>Estratégia · Gestão</span></div></article>
+      <article class="game" data-g="Ação" data-name="Pulso Neon" data-desc="Atravesse arenas digitais em um jogo de ação e reflexos, onde cada movimento altera o ritmo da fase." data-platform="PC · Demo"><svg class="art" role="img" aria-label="Arte conceitual de Pulso Neon"><use href="#a4"/></svg><button class="game-open" type="button" aria-label="Ver detalhes de Pulso Neon"><span class="open-label">VER JOGO ↗</span></button><button class="favorite-btn" type="button" aria-label="Adicionar Pulso Neon aos favoritos" aria-pressed="false">♡</button><div class="gi"><b>Pulso Neon</b><span>Ação · Arcade</span></div></article>
+      <article class="game" data-g="Simulação" data-name="Horta da Vovó" data-desc="Cuide de uma pequena horta, plante no ritmo das estações e transforme o quintal em um lugar cheio de vida." data-platform="PC · Em desenvolvimento"><svg class="art" role="img" aria-label="Arte conceitual de Horta da Vovó"><use href="#a5"/></svg><button class="game-open" type="button" aria-label="Ver detalhes de Horta da Vovó"><span class="open-label">VER JOGO ↗</span></button><button class="favorite-btn" type="button" aria-label="Adicionar Horta da Vovó aos favoritos" aria-pressed="false">♡</button><div class="gi"><b>Horta da Vovó</b><span>Simulação · Relaxante</span></div></article>
+      <article class="game" data-g="Ação" data-name="Ferro e Faísca" data-desc="Salte entre telhados, conserte máquinas e ilumine uma cidade que nunca dorme." data-platform="PC · Demo demonstrativa"><svg class="art" role="img" aria-label="Arte conceitual de Ferro e Faísca"><use href="#a6"/></svg><button class="game-open" type="button" aria-label="Ver detalhes de Ferro e Faísca"><span class="open-label">VER JOGO ↗</span></button><button class="favorite-btn" type="button" aria-label="Adicionar Ferro e Faísca aos favoritos" aria-pressed="false">♡</button><div class="gi"><b>Ferro e Faísca</b><span>Ação · Plataforma</span></div></article>
+      <article class="game" data-g="Aventura" data-name="Maré Vermelha" data-desc="Um farol, um mar que mudou de cor e uma investigação que só funciona de noite." data-platform="PC · Em desenvolvimento"><svg class="art" role="img" aria-label="Arte conceitual de Maré Vermelha"><use href="#a7"/></svg><button class="game-open" type="button" aria-label="Ver detalhes de Maré Vermelha"><span class="open-label">VER JOGO ↗</span></button><button class="favorite-btn" type="button" aria-label="Adicionar Maré Vermelha aos favoritos" aria-pressed="false">♡</button><div class="gi"><b>Maré Vermelha</b><span>Aventura · Mistério</span></div></article>
+      <article class="game" data-g="Estratégia" data-name="Torre dos Ventos" data-desc="Proteja ilhas flutuantes com moinhos, torres e a força do vento." data-platform="PC · Em desenvolvimento"><svg class="art" role="img" aria-label="Arte conceitual de Torre dos Ventos"><use href="#a8"/></svg><button class="game-open" type="button" aria-label="Ver detalhes de Torre dos Ventos"><span class="open-label">VER JOGO ↗</span></button><button class="favorite-btn" type="button" aria-label="Adicionar Torre dos Ventos aos favoritos" aria-pressed="false">♡</button><div class="gi"><b>Torre dos Ventos</b><span>Estratégia · Defesa</span></div></article>
+      <a href="#participar" class="game cta-card"><span class="pf g" style="line-height:2">SEU JOGO<br>AQUI</span></a>
+    </div>
+    <p class="note" style="margin-top:18px">Jogos fictícios, criados para este protótipo.</p>
+  </div>
+</section>
+
+<section class="sec" id="resultados">
+  <div class="c">
+    <div class="head rv"><span class="fake">EXEMPLO FICTÍCIO · RESULTADOS SIMULADOS EM 30 DIAS</span><h2 class="h2" style="margin-top:18px">Você acompanha tudo, sem planilha complicada</h2><p class="lede">O painel Insights mostra de onde vêm os jogadores e o que eles fazem depois de ver o seu jogo.</p></div>
+    <div class="stats rv">
+      <div class="stat"><b data-count="25000">25.000</b><span>Visualizações na vitrine</span></div>
+      <div class="stat"><b data-count="3200">3.200</b><span>Visitas à página do jogo</span></div>
+      <div class="stat"><b data-count="850">850</b><span>Cliques para jogar</span></div>
+      <div class="stat"><b data-count="140">140</b><span>Avaliações de jogadores</span></div>
+    </div>
+    <div class="dash">
+      <div class="card rv"><h3 style="font-size:18px;margin-bottom:14px">Visualizações por semana</h3>
+        <svg class="chart" viewBox="0 0 320 120" role="img" aria-label="Gráfico simulado: visualizações crescendo semana a semana"><path d="M0 100 L107 70 L213 40 L320 14 V120 H0Z" fill="url(#area)"/><polyline points="0,100 107,70 213,40 320,14" fill="none" stroke="#39ff88" stroke-width="3" stroke-linejoin="round"/><g fill="#39ff88"><circle cx="0" cy="100" r="4"/><circle cx="107" cy="70" r="4"/><circle cx="213" cy="40" r="4"/><circle cx="320" cy="14" r="4"/></g></svg>
+        <div style="display:flex;justify-content:space-between" class="note"><span>Semana 1</span><span>Semana 2</span><span>Semana 3</span><span>Semana 4</span></div></div>
+      <div class="card rv"><h3 style="font-size:18px;margin-bottom:18px">De onde vieram os jogadores</h3>
+        <ul class="bars">
+          <li><div class="t"><span>Redes sociais</span><span>42%</span></div><div class="bar-bg"><i style="width:42%"></i></div></li>
+          <li><div class="t"><span>Comunidades indie</span><span>31%</span></div><div class="bar-bg"><i style="width:31%"></i></div></li>
+          <li><div class="t"><span>Criadores de conteúdo</span><span>19%</span></div><div class="bar-bg"><i style="width:19%"></i></div></li>
+          <li><div class="t"><span>Busca na vitrine</span><span>8%</span></div><div class="bar-bg"><i style="width:8%"></i></div></li>
+        </ul></div>
+    </div>
+    <p class="note" style="margin-top:16px;max-width:720px">Esses números são simulados, para mostrar como a divulgação pode gerar interesse, levar jogadores até a página do jogo e incentivar avaliações. Dados reais só serão apresentados quando a plataforma estiver funcionando.</p>
+  </div>
+</section>
+
+<section class="sec alt" id="caso">
+  <div class="c">
+    <div class="head rv"><span class="fake">ESTUDO DE CASO FICTÍCIO</span><h2 class="h2" style="margin-top:18px">Como Lanterna do Vazio foi descoberto</h2></div>
+    <div class="case">
+      <div class="cover rv"><svg class="art" role="img" aria-label="Capa: lanterna brilhando sobre colinas"><use href="#a1"/></svg></div>
+      <div class="rv">
+        <p class="g" style="font-weight:700;font-size:14px">Vaga-Lume Games · duas desenvolvedoras independentes</p>
+        <p style="font-size:19px;margin-top:10px">Em Lanterna do Vazio, você controla Ayla, uma guardiã de lanternas que atravessa um mundo sem estrelas. A cada fase, ela reacende uma constelação.</p>
+        <div class="tl" style="--c:#ff8fb0"><div class="pf">ANTES</div><strong>O jogo estava pronto</strong><span>Só os amigos e a família sabiam que ele existia.</span></div>
+        <div class="tl" style="--c:#39ff88"><div class="pf">COM A GLITCH LAB</div><strong>Página, divulgação e avaliações</strong><span>Ganhou página na vitrine, apareceu em comunidades indie e passou a receber opiniões.</span></div>
+        <div class="tl" style="--c:#19e3ff"><div class="pf">DEPOIS</div><strong>Novos jogadores chegaram</strong><span>Em 30 dias, gente que a dupla nunca tinha visto jogou, avaliou e ajudou a escolher as próximas melhorias.</span></div>
+        <blockquote class="quote"><p style="font-size:18px">“Antes, só mostrávamos o jogo para os amigos. Quando entrou na vitrine, começaram a aparecer comentários de gente que a gente nunca tinha visto. Foi uma sensação ótima.”</p><p class="note" style="margin-top:10px">Marina, Vaga-Lume Games · depoimento fictício</p></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="c">
+    <div class="head rv center"><span class="eyebrow">COMPARAÇÃO</span><h2 class="h2">Divulgar sozinho ou com a Glitch Lab</h2></div>
+    <div class="scroll rv"><table class="tbl">
+      <thead><tr><th></th><th>Sozinho</th><th class="hl">Com a Glitch Lab</th></tr></thead>
+      <tbody>
+        <tr><td>Onde o jogo aparece</td><td>Só no seu perfil e na sua loja</td><td class="hl">Vitrine feita para jogos indie</td></tr>
+        <tr><td>Divulgação</td><td>Você pesquisa e escreve para cada canal</td><td class="hl">Redes, comunidades e criadores</td></tr>
+        <tr><td>Avaliações</td><td>Espalhadas em vários lugares</td><td class="hl">Reunidas na página do jogo</td></tr>
+        <tr><td>Resultados</td><td>Difíceis de medir</td><td class="hl">Painel Insights com números claros</td></tr>
+        <tr><td>Tempo seu</td><td>Menos tempo para criar</td><td class="hl">Você volta a focar no jogo</td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+
+<section class="sec alt" id="planos">
+  <div class="c">
+    <div class="head rv center"><span class="fake">VALORES ILUSTRATIVOS DO PROTÓTIPO</span><h2 class="h2" style="margin-top:18px">Planos para cada fase do seu jogo</h2><p class="lede">Os preços definitivos serão definidos quando a plataforma estiver no ar.</p></div>
+    <div class="grid g3" style="align-items:stretch">
+      <div class="card plan rv"><h3>Descoberta</h3><div class="price">R$ 490<small> / campanha</small></div><p class="mut">Para quem quer testar a vitrine.</p><ul><li>Página do jogo na vitrine</li><li>Painel Insights básico</li><li>Avaliações de jogadores</li></ul><a href="#participar" class="btn out">Quero esse</a></div>
+      <div class="card plan hot rv"><span class="tag">Mais escolhido</span><h3>Impulso</h3><div class="price">R$ 1.500<small> / 30 dias</small></div><p class="mut">Vitrine mais divulgação ativa.</p><ul><li>Tudo do plano Descoberta</li><li>Divulgação em redes e comunidades indie</li><li>Envio para criadores de conteúdo</li><li>Relatório completo no fim</li></ul><a href="#participar" class="btn">Quero esse ↗</a></div>
+      <div class="card plan rv"><h3>Lançamento</h3><div class="price">R$ 3.900<small> / 60 dias</small></div><p class="mut">Para quem está perto de lançar.</p><ul><li>Tudo do plano Impulso</li><li>Campanha de pré-lançamento</li><li>Acompanhamento da equipe</li></ul><a href="#participar" class="btn out">Quero esse</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sobre">
+  <div class="c">
+    <div class="head rv"><span class="eyebrow">BUILT ON TRUST / 04</span><h2 class="h2">O que prometemos, e o que não prometemos</h2><p class="lede">Credibilidade começa por dizer a verdade, inclusive sobre os limites do nosso trabalho.</p></div>
+    <div class="grid g3">
+      <div class="card yes rv"><h3 style="margin-bottom:16px">Prometemos</h3><ul><li>Mostrar seu jogo para pessoas que gostam de jogos indie</li><li>Entregar relatórios com números reais</li><li>Explicar valores e prazos antes de começar</li></ul></div>
+      <div class="card no rv"><h3 style="margin-bottom:16px">Não prometemos</h3><ul><li>Sucesso da noite para o dia</li><li>Um número fixo de jogadores ou de vendas</li><li>Resultados sem o seu jogo ser bom e estar pronto para jogar</li></ul></div>
+      <div class="card yes rv"><h3 style="margin-bottom:16px">Seus dados e seu jogo</h3><ul><li>O jogo, a arte e a música continuam seus</li><li>Usamos seus dados só para falar sobre o seu jogo</li><li>Você pode sair da vitrine quando quiser</li></ul></div>
+    </div>
+
+    <div class="head rv" style="margin-top:80px"><span class="eyebrow">QUEM SOMOS</span><h2 class="h2">Gente que ama jogos feitos à mão</h2><p class="lede">A Glitch Lab nasceu de uma pergunta simples: quantos bons jogos ninguém chegou a jogar? Queremos diminuir esse número.</p></div>
+    <div class="grid g3 team">
+      <div class="card rv"><div class="av">ML</div><h3>Marcos Lacerda</h3><p class="g" style="font-size:14px">Fundador · Desenvolvedor · Analista de Proposta</p><p class="mut" style="margin-top:8px">Constrói a plataforma e analisa cada proposta que chega, para entender o que torna cada jogo único e qual a melhor forma de apresentá-lo.</p></div>
+      <div class="card rv"><div class="av">WG</div><h3>Walter Gabriel</h3><p class="g" style="font-size:14px">Co-fundador · Auxiliar Analítico</p><p class="mut" style="margin-top:8px">Cuida dos números por trás de cada campanha e transforma os dados do Insights em relatórios claros e honestos.</p></div>
+      <div class="card rv"><div class="av">AW</div><h3>Alberto Willian</h3><p class="g" style="font-size:14px">Co-fundador · Auxiliar Administrativo</p><p class="mut" style="margin-top:8px">Mantém a casa organizada, apoia a equipe em tudo o que for preciso e garante que prazos e combinados sejam cumpridos.</p></div>
+    </div>
+    <div class="card rv" style="text-align:center;margin-top:56px"><span class="eyebrow">PRIMEIROS PARCEIROS</span><h3 style="font-size:clamp(22px,3vw,30px);max-width:640px;margin:0 auto">O espaço dos primeiros depoimentos é do seu jogo</h3><p class="lede" style="margin:14px auto 24px">Estamos começando e preferimos mostrar resultados reais a inventar elogios. Seja um dos primeiros estúdios na vitrine.</p><a class="btn" href="#participar">Quero ser um dos primeiros ↗</a></div>
+  </div>
+</section>
+
+<section class="sec alt" id="perguntas">
+  <div class="c" style="max-width:820px">
+    <div class="head rv"><span class="eyebrow">PERGUNTAS FREQUENTES</span><h2 class="h2">Ainda tem dúvidas?</h2><p class="lede">Separamos as perguntas que mais costumam aparecer. Se a sua não estiver aqui, escreva no formulário abaixo.</p></div>
+    <details open><summary>O que é a Glitch Lab?</summary><p>Uma plataforma de divulgação para jogos independentes. Reunimos jogos de pequenas desenvolvedoras numa vitrine, mostramos esses jogos para os jogadores e entregamos os resultados para quem fez o jogo.</p></details>
+    <details><summary>Quem pode participar?</summary><p>Qualquer pessoa ou estúdio pequeno com um jogo independente, de qualquer gênero. Basta ter um link para jogar ou um trailer.</p></details>
+    <details><summary>Meu jogo precisa estar terminado?</summary><p>Não. Demos, jogos em acesso antecipado e lançamentos recentes também podem participar, desde que dê para jogar ou ver algo do jogo.</p></details>
+    <details><summary>Quanto custa?</summary><p>Neste protótipo, os valores são ilustrativos: de R$ 490 a R$ 3.900, com o plano do meio em R$ 1.500 por 30 dias. A ideia é ter opções acessíveis para quem está começando, e o preço final só será definido com a plataforma no ar.</p></details>
+    <details><summary>Como a divulgação é feita?</summary><p>Criamos uma página para o jogo e mostramos ele na vitrine, em redes sociais, em comunidades indie e para criadores de conteúdo. Depois você acompanha tudo em um painel.</p></details>
+    <details><summary>Em quanto tempo meu jogo aparece na vitrine?</summary><p>A ideia é publicar a página em poucos dias depois que você enviar o material. Esse prazo é ilustrativo no protótipo.</p></details>
+    <details><summary>Vocês garantem resultados?</summary><p>Não, e é bom desconfiar de quem garante. Oferecemos visibilidade, avaliações e dados. O resultado depende do jogo, do momento e do público.</p></details>
+    <details><summary>O jogo continua sendo meu?</summary><p>Sim. O jogo, a arte e a música continuam sendo seus. A Glitch Lab só exibe o material com a sua autorização.</p></details>
+    <details><summary>Como eu vejo os resultados?</summary><p>No painel Insights você acompanha visualizações, visitas à página, cliques para jogar e avaliações dos jogadores.</p></details>
+    <details><summary>Posso tirar meu jogo da vitrine?</summary><p>Pode. Se quiser sair, é só avisar e a página do jogo é retirada.</p></details>
+    <p class="note" style="margin-top:14px">As respostas descrevem a proposta da Glitch Lab. Regras e valores definitivos serão definidos quando a plataforma estiver no ar.</p>
+  </div>
+</section>
+
+<section class="sec" id="participar" style="background-image:linear-gradient(rgba(57,255,136,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(57,255,136,.05) 1px,transparent 1px);background-size:44px 44px">
+  <div class="c formwrap">
+    <div class="rv">
+      <span class="eyebrow">YOUR NEXT MOVE / 05</span>
+      <h2 class="h2">Divulgue seu jogo</h2>
+      <p class="lede">Conte um pouco sobre o seu jogo. A gente lê tudo e responde por e-mail.</p>
+      <ul class="contact" style="margin-top:28px">
+        <li><b>E-mail</b><span id="ct-email"></span></li>
+        <li><b>Resposta</b><span id="ct-resp"></span></li>
+        <li><b>Redes</b><span id="ct-redes"></span></li>
+      </ul>
+    </div>
+    <div class="formbox rv">
+      <div id="fv">
+        <label>Seu nome<input id="nome" type="text" placeholder="Como podemos te chamar?" autocomplete="name"></label>
+        <label>E-mail<input id="email" type="email" placeholder="voce@exemplo.com" autocomplete="email"></label>
+        <label>Nome do jogo<input id="jogo" type="text"></label>
+        <label>Gênero<select id="genero"><option>Aventura</option><option>Puzzle</option><option>Estratégia</option><option>Simulação</option><option>Ação</option><option>Outro</option></select></label>
+        <label>Link do jogo ou do trailer (opcional)<input id="link" type="text" placeholder="https://"></label>
+        <label class="ck"><input id="ok" type="checkbox"><span>Concordo em receber contato da Glitch Lab sobre o meu jogo. Meus dados serão usados só para isso.</span></label>
+        <div id="err" class="err" role="alert" hidden></div>
+        <button id="send" type="button" class="btn" style="width:100%">Enviar meu jogo ↗</button>
+      </div>
+      <div id="done" role="status" hidden>
+        <div class="okc" aria-hidden="true">✓</div>
+        <h2 class="h2" style="font-size:34px">Solicitação registrada!</h2>
+        <p style="margin-top:12px">Registro local de <span id="r1"></span>: <strong id="r2"></strong> (<span id="r3"></span>), contato informado: <span id="r4"></span>.</p>
+        <ul class="mut" style="margin:18px 0"><li>1. Vamos conhecer seu jogo e seu material.</li><li>2. Criamos a página do seu jogo na plataforma.</li><li>3. Começamos a mostrar seu jogo aos jogadores.</li></ul>
+        <p class="note" id="donenote">Demonstração: os dados ficam salvos apenas neste navegador. Nenhuma mensagem é enviada à equipe ou pela internet.</p>
+        <div style="margin-top:18px"><a id="mailto" class="btn sm" href="#participar" hidden>Enviar por e-mail à equipe ↗</a></div>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:18px"><button id="again" type="button" class="btn out sm">Enviar outro jogo</button><a href="#topo" class="g" style="font-weight:700">Voltar ao início ↑</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec" id="gameDetail" hidden>
+ <div class="detail-wrap">
+  <a class="detail-back" href="#vitrine"><span>←</span> VOLTAR PARA A VITRINE</a>
+  <div class="detail-hero">
+   <div class="detail-copy"><div class="detail-kicker" id="detailKicker">GLITCH LAB ORIGINALS / 001</div><h1 class="detail-title" id="detailTitle" tabindex="-1">Título do jogo</h1><p class="detail-lead" id="detailLead"></p><div class="detail-tags" id="detailTags"></div><div class="detail-cta"><button class="btn buy-btn" id="detailBuy" type="button">ADQUIRA AQUI ↗</button><span class="buy-note" id="buyNote">Acesse a página oficial do jogo.</span></div><p class="detail-buy-status" id="buyStatus" role="status"></p></div>
+   <div class="detail-artbox"><div class="detail-art" id="detailArt"></div></div>
+  </div>
+  <div class="detail-section"><div class="head"><span class="eyebrow">UM OLHAR MAIS DE PERTO</span><h2>Entre nesse universo.</h2><p class="lede" id="detailSubhead"></p></div>
+   <div class="detail-body"><div><p id="detailStory"></p><div style="margin-top:30px"><h2 style="font-size:25px">O que espera por você</h2><p id="detailFeatures"></p></div></div><div class="detail-facts" id="detailFacts"></div></div>
+  </div>
+  <div class="detail-section"><div class="head"><span class="eyebrow">GAMEPLAY / ATMOSFERA</span><h2>Veja o mundo ganhar vida.</h2><p class="lede">Uma prévia ilustrativa e animada. O trailer real entra aqui quando o estúdio enviar.</p></div>
+   <div class="trailer-frame"><div class="trailer-stage"><div class="trailer-art" id="trailerArt"></div></div><span class="trailer-live">● PRÉVIA ILUSTRATIVA</span><span class="trailer-caption" id="trailerCaption">CENA DO UNIVERSO</span></div>
+   <div class="trailer-strip"><div class="shot"><span>AMBIENTE</span></div><div class="shot"><span>ATMOSFERA</span></div><div class="shot"><span>EXPLORAÇÃO</span></div></div>
+  </div>
+  <div class="detail-section" style="text-align:center;padding-bottom:30px"><span class="eyebrow">SUA PRÓXIMA AVENTURA</span><h2 id="detailFinalTitle" style="margin:18px auto">Pronto para jogar?</h2><p class="lede" style="margin:0 auto 25px">Descubra, apoie quem cria e faça parte dessa história.</p><button class="btn buy-btn" id="detailBuyBottom" type="button">ADQUIRA AQUI ↗</button></div>
+ </div>
+</section>
+
+<footer>
+  <div class="c">
+    <div class="fg">
+      <div><a href="#topo" class="logo"><i></i>GLITCH LAB</a><p class="mut" style="margin-top:14px;font-size:14px;max-width:280px">Descubra. Divulgue. Conquiste seu espaço.</p></div>
+      <div><h4>Plataforma</h4><ul><li><a href="#como">Como funciona</a></li><li><a href="#vitrine">Vitrine</a></li><li><a href="#planos">Planos</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="#sobre">Sobre nós</a></li><li><a href="#resultados">Resultados</a></li><li><a href="#perguntas">Perguntas</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li id="ft-email"></li><li><a href="#participar">Divulgue seu jogo</a></li></ul></div>
+    </div>
+    <p class="note">Protótipo de demonstração. Jogos, números, valores, pessoas e depoimentos exibidos são fictícios.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.classList.add('js');
+
+  /* menu no celular */
+  $('mbtn').addEventListener('click', function () {
+    var open = $('links').classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+  });
+  $('links').addEventListener('click', function (e) { if (e.target.tagName === 'A') { $('links').classList.remove('open'); $('mbtn').setAttribute('aria-expanded', 'false'); } });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && $('links').classList.contains('open')) { $('links').classList.remove('open'); $('mbtn').setAttribute('aria-expanded', 'false'); $('mbtn').focus(); } });
+
+  /* pixels do fundo */
+  var cores = ['#39ff88', '#39ff88', '#39ff88', '#19e3ff', '#ff2d6f'], tam = [6, 8, 10, 12];
+  var qtd = window.innerWidth < 700 ? 7 : 18;
+  for (var i = 0; i < qtd && !reduce; i++) {
+    var p = document.createElement('div'), c = cores[i % 5], t = tam[i % 4];
+    p.className = 'px';
+    p.style.cssText = 'left:' + (2 + Math.random() * 95) + '%;width:' + t + 'px;height:' + t + 'px;background:' + c + ';box-shadow:0 0 12px ' + c + ';animation-duration:' + (7 + Math.random() * 7) + 's;animation-delay:-' + (Math.random() * 14) + 's';
+    $('fx').appendChild(p);
+  }
+
+  /* aparecer ao rolar + contagem dos números */
+  function contar(el) {
+    var alvo = +el.dataset.count, ini = performance.now(), dur = 1400;
+    (function passo(agora) {
+      var k = Math.min((agora - ini) / dur, 1);
+      el.textContent = Math.round(alvo * (1 - Math.pow(1 - k, 3))).toLocaleString('pt-BR');
+      if (k < 1) requestAnimationFrame(passo);
+    })(ini);
+  }
+  function mostrar(el) {
+    el.classList.add('in');
+    if (el.dataset.count && !reduce) contar(el);
+  }
+  var alvos = document.querySelectorAll('.rv, [data-count]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { mostrar(e.target); io.unobserve(e.target); } });
+    }, { threshold: .15 });
+    alvos.forEach(function (a) { io.observe(a); });
+  } else { alvos.forEach(mostrar); }
+  setTimeout(function () { document.querySelectorAll('.rv').forEach(function (a) { a.classList.add('in'); }); }, 4000);
+
+  /* formulário */
+  var campos = ['nome', 'email', 'jogo', 'link'];
+  function limpar() { $('err').hidden = true; }
+  campos.concat(['genero', 'ok']).forEach(function (id) { $(id).addEventListener('input', limpar); $(id).addEventListener('change', limpar); });
+  $('send').addEventListener('click', function () {
+    var nome = $('nome').value.trim(), email = $('email').value.trim(), jogo = $('jogo').value.trim();
+    var msg = '';
+    if (!nome || !jogo || !/^\S+@\S+\.\S+$/.test(email)) msg = 'Preencha seu nome, um e-mail válido e o nome do jogo.';
+    else if (!$('ok').checked) msg = 'Marque a caixa para autorizarmos o contato sobre o seu jogo.';
+    if (msg) { $('err').textContent = msg; $('err').hidden = false; return; }
+    var dados = { nome:nome, email:email, jogo:jogo, genero:$('genero').value, link:$('link').value.trim(), data:new Date().toISOString() };
+    function concluir(enviado) {
+      $('r1').textContent = nome; $('r2').textContent = jogo; $('r3').textContent = dados.genero; $('r4').textContent = email;
+      $('donenote').textContent = enviado ? 'Recebemos o seu envio. Vamos responder por e-mail.' : 'Demonstração: os dados ficam salvos apenas neste navegador. Nenhuma mensagem é enviada à equipe ou pela internet.';
+      try {
+        var registros = JSON.parse(localStorage.getItem('glitchlab:submissions') || '[]');
+        if (!Array.isArray(registros)) registros = [];
+        registros.push(dados);
+        localStorage.setItem('glitchlab:submissions', JSON.stringify(registros));
+      } catch (e) { /* segue sem armazenamento local */ }
+      $('fv').hidden = true; $('done').hidden = false;
+      $('participar').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    }
+    var ep = window.GLITCHLAB_FORM_ENDPOINT;
+    if (!ep) { concluir(false); return; }
+    var btn = $('send'); btn.disabled = true; btn.textContent = 'Enviando...';
+    fetch(ep, { method:'POST', headers:{ 'Content-Type':'application/json', 'Accept':'application/json' }, body:JSON.stringify(dados) })
+      .then(function (r) { if (!r.ok) throw new Error('falha'); concluir(true); })
+      .catch(function () { $('err').textContent = 'Não conseguimos enviar agora. Tente de novo ou escreva para o e-mail de contato.'; $('err').hidden = false; })
+      .then(function () { btn.disabled = false; btn.textContent = 'Enviar meu jogo ↗'; });
+  });
+  $('again').addEventListener('click', function () {
+    campos.forEach(function (id) { $(id).value = ''; });
+    $('genero').selectedIndex = 0; $('ok').checked = false; limpar();
+    $('done').hidden = true; $('fv').hidden = false;
+  });
+})();
+</script>
+<script>
+(function(){
+  'use strict';
+  var $=function(id){return document.getElementById(id);};
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.game[data-g]'));
+  if(!cards.length) return;
+  var activeGenre='todos', onlyFav=false, favorites=[];
+  try{favorites=JSON.parse(localStorage.getItem('glitchlab:favorites')||'[]');if(!Array.isArray(favorites))favorites=[];}catch(e){favorites=[];}
+  function save(){try{localStorage.setItem('glitchlab:favorites',JSON.stringify(favorites));}catch(e){}}
+  function nameOf(card){return card.dataset.name||card.querySelector('.gi b').textContent.trim();}
+  function updateFavoriteButtons(){
+    cards.forEach(function(card){var name=nameOf(card),on=favorites.indexOf(name)!==-1,btn=card.querySelector('.favorite-btn');if(btn){btn.setAttribute('aria-pressed',String(on));btn.textContent=on?'♥':'♡';btn.setAttribute('aria-label',(on?'Remover ':'Adicionar ')+name+' '+(on?'dos':'aos')+' favoritos');}});
+    $('favCount').textContent=String(favorites.length);
+  }
+  function applyFilters(){
+    var q=$('gameSearch').value.trim().toLocaleLowerCase('pt-BR'),visible=0;
+    cards.forEach(function(card){var genre=card.dataset.g||'',name=nameOf(card),hay=(name+' '+genre+' '+(card.dataset.desc||'')).toLocaleLowerCase('pt-BR');var show=(activeGenre==='todos'||genre===activeGenre)&&(!q||hay.indexOf(q)!==-1)&&(!onlyFav||favorites.indexOf(name)!==-1);card.hidden=!show;if(show)visible++;});
+    $('catalogStatus').textContent=visible+' '+(visible===1?'jogo encontrado':'jogos encontrados')+(onlyFav?' nos favoritos':'');if(!visible)$('catalogStatus').textContent='Nenhum jogo encontrado. Tente limpar a busca ou os filtros.';
+  }
+  function saveView(){try{localStorage.setItem('glitchlab:view',JSON.stringify({g:activeGenre,s:$('gameSort').value}));}catch(e){}}
+  function setGenre(g){activeGenre=g;document.querySelectorAll('.chip[data-f]').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.f===g));});}
+  document.querySelectorAll('.chip[data-f]').forEach(function(ch){ch.addEventListener('click',function(){setGenre(ch.dataset.f);applyFilters();saveView();});});
+  $('gameSearch').addEventListener('input',applyFilters);
+  $('favoritesOnly').addEventListener('click',function(){onlyFav=!onlyFav;this.setAttribute('aria-pressed',String(onlyFav));this.classList.toggle('active',onlyFav);applyFilters();});
+  function sortCards(mode){var grid=$('gamesGrid'),sorted=cards.slice();if(mode==='name')sorted.sort(function(a,b){return nameOf(a).localeCompare(nameOf(b),'pt-BR');});else if(mode==='genre')sorted.sort(function(a,b){return a.dataset.g.localeCompare(b.dataset.g,'pt-BR');});sorted.forEach(function(card){grid.insertBefore(card,grid.querySelector('.cta-card'));});}
+  $('gameSort').addEventListener('change',function(){sortCards(this.value);saveView();});
+  var toastEl=document.createElement('div'),toastTimer;toastEl.className='toast';toastEl.setAttribute('role','status');document.body.appendChild(toastEl);
+  function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){toastEl.classList.remove('show');},1800);}
+  function toggleFavorite(card){var name=nameOf(card),i=favorites.indexOf(name);if(i===-1){favorites.push(name);toast(name+' adicionado aos favoritos');}else{favorites.splice(i,1);toast(name+' removido dos favoritos');}save();updateFavoriteButtons();applyFilters();}
+  cards.forEach(function(card){card.querySelector('.favorite-btn').addEventListener('click',function(e){e.stopPropagation();toggleFavorite(card);});card.querySelector('.game-open').addEventListener('click',function(){openGamePage(card);});card.addEventListener('click',function(e){if(!e.target.closest('button'))openGamePage(card);});});
+  var gameInfo={
+   'Lanterna do Vazio':{lead:'Uma jornada de exploração em um vale onde até as estrelas desapareceram.',story:'Você acompanha uma guardiã de lanternas em uma expedição por ruínas esquecidas. Cada luz reacendida revela fragmentos de uma história que o mundo tentou apagar. Explore trilhas escondidas, encontre vestígios de outras expedições e descubra por que a escuridão continua crescendo.',features:'Exploração contemplativa, segredos ambientais, descoberta narrativa e uma atmosfera construída em torno de luz e sombra.',tags:['Aventura','Exploração','Mistério'],facts:[['GÊNERO','Aventura narrativa'],['PLATAFORMA','PC'],['STATUS','Demo demonstrativa']],sub:'Nem toda luz serve para iluminar o caminho. Algumas revelam o que deveria permanecer escondido.',caption:'A LUZ É O SEU GUIA'},
+   'Mar de Engrenagens':{lead:'Desça até uma cidade submersa e desperte mecanismos que dormem há séculos.',story:'Em um oceano cheio de estruturas colossais, antigas máquinas mantêm os últimos bairros de uma cidade funcionando. Resolva mecanismos, conecte circuitos e interprete pistas deixadas por quem construiu esse mundo. Cada quebra-cabeça muda a forma como você enxerga as ruínas.',features:'Enigmas mecânicos, exploração subaquática, mecanismos interligados e desafios de lógica em cenários cheios de detalhes.',tags:['Puzzle','Lógica','Exploração'],facts:[['GÊNERO','Puzzle / Aventura'],['PLATAFORMA','PC'],['STATUS','Demo demonstrativa']],sub:'A cidade parou. O oceano guardou seus segredos. Está na hora de ligar tudo novamente.',caption:'O FUNDO ESCONDE RESPOSTAS'},
+   'Reino das Raposas':{lead:'Construa um reino, forme alianças e decida o destino de clãs rivais.',story:'Um território dividido precisa encontrar um novo equilíbrio. Administre recursos, desenvolva seu assentamento e negocie com clãs que possuem objetivos próprios. Suas escolhas definem quais alianças sobrevivem e que tipo de reino surgirá no fim.',features:'Gestão de recursos, decisões estratégicas, expansão de território e relações entre clãs.',tags:['Estratégia','Gestão','Construção'],facts:[['GÊNERO','Estratégia / Gestão'],['PLATAFORMA','PC'],['STATUS','Em desenvolvimento']],sub:'Um reino não nasce de uma coroa. Nasce das escolhas de quem o constrói.',caption:'SEU REINO. SUAS REGRAS.'},
+   'Pulso Neon':{lead:'Velocidade, reflexos e arenas digitais em um arcade que nunca fica parado.',story:'Entre em arenas luminosas onde o cenário reage ao seu ritmo. Desvie de obstáculos, atravesse sequências cada vez mais intensas e aprenda a ler o pulso de cada fase. Aqui, precisão e improviso valem tanto quanto velocidade.',features:'Ação arcade, desafios de reflexo, arenas dinâmicas e ritmo crescente a cada etapa.',tags:['Ação','Arcade','Ritmo'],facts:[['GÊNERO','Ação / Arcade'],['PLATAFORMA','PC'],['STATUS','Demo demonstrativa']],sub:'Quando o mundo acelera, só quem encontra o ritmo chega ao fim.',caption:'SINTA O PULSO'},
+   'Horta da Vovó':{lead:'Um cantinho esquecido pode florescer. Plante, cuide e veja as estações transformarem tudo.',story:'Assuma uma pequena horta e transforme o quintal em um lugar cheio de vida. Escolha o que plantar, acompanhe as mudanças das estações e descubra pequenas histórias nos encontros com os moradores da região. Um jogo sobre cuidado, paciência e recomeços.',features:'Plantio, cuidado com a horta, ciclos sazonais, personalização e descobertas tranquilas.',tags:['Simulação','Relaxante','Natureza'],facts:[['GÊNERO','Simulação / Cozy'],['PLATAFORMA','PC'],['STATUS','Em desenvolvimento']],sub:'Às vezes, as melhores aventuras crescem devagar.',caption:'CULTIVE SEU PRÓPRIO MUNDO'},
+   'Ferro e Faísca':{lead:'Pule, conserte e acenda uma cidade inteira, telhado por telhado.',story:'Uma pequena robô de ferro acorda numa cidade sem energia. Cada faísca recuperada liga novas rotas pelos telhados e revela por que as luzes se apagaram.',features:'Plataforma ágil, circuitos para consertar, rotas verticais e chefes feitos de engrenagens.',tags:['Ação','Plataforma','Steampunk'],facts:[['GÊNERO','Ação / Plataforma'],['PLATAFORMA','PC'],['STATUS','Demo demonstrativa']],sub:'A cidade está escura. Você carrega a única faísca.',caption:'FAÍSCA NO ESCURO'},
+   'Maré Vermelha':{lead:'O mar mudou de cor. O farol ainda sabe por quê.',story:'Você assume o posto de guardião de um farol numa vila costeira. Quando a maré fica vermelha, estranhos sinais chegam pela água e só a luz do farol mantém a vila segura.',features:'Investigação noturna, atmosfera de mistério, decisões com consequências e um farol para cuidar.',tags:['Aventura','Mistério','Atmosférico'],facts:[['GÊNERO','Aventura / Mistério'],['PLATAFORMA','PC'],['STATUS','Em desenvolvimento']],sub:'Mantenha a luz acesa. A maré está voltando.',caption:'A LUZ VIGIA A MARÉ'},
+   'Torre dos Ventos':{lead:'Ilhas no céu, moinhos de guerra e o vento como aliado.',story:'Arquipélagos flutuantes são ameaçados por tempestades vivas. Posicione torres, moinhos e defesas, e aprenda a usar a direção do vento a seu favor.',features:'Defesa estratégica, vento dinâmico, ilhas para expandir e combinações de torres.',tags:['Estratégia','Defesa','Fantasia'],facts:[['GÊNERO','Estratégia / Defesa'],['PLATAFORMA','PC'],['STATUS','Em desenvolvimento']],sub:'Quem domina o vento, domina o céu.',caption:'O VENTO DECIDE'}
+  };
+  var baseTitle=document.title;
+  function slugify(t){return t.toLocaleLowerCase('pt-BR').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+  function openGamePage(card){location.hash='jogo-'+slugify(nameOf(card));}
+  function renderGameRoute(){var match=location.hash.match(/^#jogo-(.+)$/),detail=$('gameDetail');if(!match){document.body.classList.remove('game-page');detail.hidden=true;document.title=baseTitle;return;}var card=cards.find(function(c){return slugify(nameOf(c))===match[1];});if(!card){location.hash='vitrine';return;}var name=nameOf(card),info=gameInfo[name]||{},art=card.querySelector('svg').outerHTML;document.body.classList.add('game-page');detail.hidden=false;document.title=name+' — GLITCH LAB®';
+   $('detailKicker').textContent='GLITCH LAB ORIGINALS / '+String(cards.indexOf(card)+1).padStart(3,'0');$('detailTitle').textContent=name;$('detailLead').textContent=info.lead||card.dataset.desc;$('detailSubhead').textContent=info.sub||card.dataset.desc;$('detailStory').textContent=info.story||card.dataset.desc;$('detailFeatures').textContent=info.features||'Explore esse universo independente.';$('detailTags').innerHTML=(info.tags||[card.dataset.g]).map(function(t){var el=document.createElement('span');el.textContent=t;return el.outerHTML;}).join('');$('detailFacts').innerHTML=(info.facts||[['GÊNERO',card.dataset.g],['PLATAFORMA',card.dataset.platform],['STATUS','Projeto independente']]).map(function(f){return '<div class="fact"><small>'+f[0]+'</small><strong>'+f[1]+'</strong></div>';}).join('');$('detailArt').innerHTML=art;$('trailerArt').innerHTML=art;$('trailerCaption').textContent=info.caption||'CENA DO UNIVERSO';$('detailFinalTitle').textContent='Sua próxima aventura é '+name+'.';$('buyStatus').classList.remove('show');$('buyStatus').textContent='';$('buyNote').textContent='O link oficial de compra será adicionado quando o jogo estiver disponível.';window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});$('detailTitle').focus({preventScroll:true});
+  }
+  window.addEventListener('hashchange',renderGameRoute);
+  $('detailBuy').addEventListener('click',showBuyNotice);$('detailBuyBottom').addEventListener('click',showBuyNotice);
+  function showBuyNotice(){var status=$('buyStatus');status.textContent='Este jogo é uma demonstração fictícia da Glitch Lab. O link de aquisição real será configurado pelo estúdio quando estiver disponível.';status.classList.add('show');}
+  try{var v=JSON.parse(localStorage.getItem('glitchlab:view')||'null');if(v){if(v.g&&document.querySelector('.chip[data-f="'+v.g+'"]'))setGenre(v.g);if(v.s&&$('gameSort').querySelector('option[value="'+v.s+'"]')){$('gameSort').value=v.s;sortCards(v.s);}}}catch(e){}
+  updateFavoriteButtons();applyFilters();renderGameRoute();
+})();
+</script>
+<script>
+(function(){
+  'use strict';
+  /* PREENCHA AQUI os contatos reais da Glitch Lab. Vazio = aparece "em breve". */
+  /* Para receber os envios de verdade, cole aqui a URL do Formspree (ou similar). Vazio = modo demonstração. */
+  window.GLITCHLAB_FORM_ENDPOINT='';
+  var CONTACT={email:'glitchlab.empire@gmail.com',instagram:'',discord:'',resposta:''};
+  var $=function(id){return document.getElementById(id);};
+  function link(el,href,label){var a=document.createElement('a');a.href=href;a.textContent=label;a.rel='noopener';a.style.color='var(--g)';el.appendChild(a);}
+  var soon='em breve · use o formulário';
+  if($('ct-email')){CONTACT.email?link($('ct-email'),'mailto:'+CONTACT.email,CONTACT.email):($('ct-email').textContent=soon);}
+  if($('ft-email')){CONTACT.email?link($('ft-email'),'mailto:'+CONTACT.email,CONTACT.email):($('ft-email').textContent='contato em breve');}
+  if($('ct-resp')){$('ct-resp').textContent=CONTACT.resposta||'respondemos por e-mail';}
+  if($('ct-redes')){var r=$('ct-redes');if(CONTACT.instagram)link(r,'https://instagram.com/'+CONTACT.instagram.replace('@',''),CONTACT.instagram);if(CONTACT.discord){if(r.firstChild)r.appendChild(document.createTextNode(' · '));link(r,CONTACT.discord,'Discord');}if(!r.firstChild)r.textContent='em breve';}
+  /* avatares pixel art da equipe */
+  document.querySelectorAll('.team .av').forEach(function(av){
+    var name=av.parentNode.querySelector('h3').textContent,h=0,i,x,y,s='';
+    for(i=0;i<name.length;i++)h=(h*31+name.charCodeAt(i))>>>0;
+    for(y=0;y<8;y++)for(x=0;x<4;x++){h=(h*1103515245+12345)>>>0;if((h>>>16)%100<46){s+='<rect x="'+x+'" y="'+y+'" width="1" height="1"/><rect x="'+(7-x)+'" y="'+y+'" width="1" height="1"/>';}}
+    av.innerHTML='<svg viewBox="0 0 8 8" fill="currentColor" shape-rendering="crispEdges" role="img" aria-label="Avatar de '+name+'">'+s+'</svg>';
+  });
+  /* e-mail pronto com os dados do formulário */
+  var done=$('done'),mt=$('mailto');
+  if(done&&mt&&CONTACT.email){new MutationObserver(function(){if(!done.hidden){var b='Nome: '+$('nome').value+'\nJogo: '+$('jogo').value+'\nGênero: '+$('genero').value+'\nLink: '+$('link').value+'\nContato: '+$('email').value;mt.href='mailto:'+CONTACT.email+'?subject='+encodeURIComponent('Quero divulgar meu jogo')+'&body='+encodeURIComponent(b);mt.hidden=false;}}).observe(done,{attributes:true,attributeFilter:['hidden']});}
+  /* voltar ao topo */
+  var b=document.createElement('button');b.type='button';b.className='totop';b.setAttribute('aria-label','Voltar ao topo');b.textContent='↑';document.body.appendChild(b);
+  b.addEventListener('click',function(){window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
+  window.addEventListener('scroll',function(){b.classList.toggle('show',window.scrollY>700);},{passive:true});
+})();
+</script>
+
+</body>
+</html>
